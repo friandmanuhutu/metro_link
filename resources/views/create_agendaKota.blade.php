@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/createAgenda.css">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
 
                 <div class="mb-3">
                     <label class="form-label" for="deskripsi">Deskripsi Agenda</label>
-                    <textarea class="form-control" id="deskripsi" rows="3" name="deskripsi">{{ old('deskripsi') }}</textarea>
+                    <textarea class="form-control" id="deskripsi" rows="3" placeholder="Masukan Deskripsi Event" name="deskripsi">{{ old('deskripsi') }}</textarea>
                 </div>
 
                 <div class="mb-3">
@@ -38,7 +38,9 @@
                     @error('tanggal_pelaksanaan')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
+                    <input type="submit" id="submit-agenda" name="submit-agenda">
                 </div>
+
             </form>
 
           </div>

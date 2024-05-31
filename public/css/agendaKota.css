@@ -577,10 +577,16 @@ section{
     padding: 11px 20px;
     background-color: #333;
     width: 170px;
+    border-radius: 3px;
+    text-align: center;
 }
 
 .ajukan_agenda a{
-    color: aliceblue;
+    color: #fff;
+}
+
+.ajukan_agenda:hover{
+    background-color: #ff9e0d;
 }
 
 

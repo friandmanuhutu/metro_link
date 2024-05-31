@@ -35,7 +35,7 @@ class AdminController extends Controller
     function galery(){
         return view("galery");
     }
-    
+
     public function tampilkan(){
         $agendaKotas = agenda_kota::all();
         return view('agenda_kota', compact('agendaKotas'));
