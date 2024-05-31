@@ -38,7 +38,7 @@
     </div>
 
     <!-- GALLERY -->
-
+{{--
     <div class="gallery-service">
         <h2>GALLERY</h2>
         <div class="row">
@@ -62,7 +62,7 @@
             </div>
         </div>
     </div>
-    <a href="galery.html" class="see-more">See More</a>
+    <a href="galery.html" class="see-more">See More</a> --}}
 
     <div class="scroll-up">
         <a href="#"><i class="ri-arrow-up-s-fill"></i></a>
