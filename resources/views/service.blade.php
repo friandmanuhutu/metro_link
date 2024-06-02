@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MetroLink</title>
-    <link rel="stylesheet" href="/css/serve.css">
+    <link rel="stylesheet" href="/css/service.css">
 
     <!-- icon -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -33,7 +33,33 @@
             <h1>SERVICE</h1>
             <p>Keluhan anda membantu membangun kota semakin sejahtera!</p>
             <a href="/metrolink">Home</a>
-            <span>/ Agenda kota</span>
+            <span>/ <a href="/metrolink/service">Service</a></span>
+        </div>
+    </div>
+    <div class="ourserve">
+        <h1>OUR SERVICE</h1>
+        <br>
+    </div>
+    <div class="row-service">
+        <div class="box-service">
+            <img src="/assets/service-1.jpg" alt=""><br>
+            <h3>INFORMASI KOTA</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iusto, voluptate quae expedita optio ex Illum</p><br>
+
+            <button class="btn-service">See More</button>
+        </div>
+        <div class="box-service">
+            <img src="/assets/service-4.jpg" alt=""><br>
+            <h3>PROBLEM COMPLAINTS</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iusto, voluptate quae expedita optio ex Illum</p><br>
+            <button class="btn-service">See More</button>
+        </div>
+        <div class="box-service">
+            <img src="/assets/service-5.jpg" alt=""><br>
+            <h3>GIVE US RATING</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iusto, voluptate quae expedita optio ex Illum </p><br>
+
+            <button class="btn-service">See More</button>
         </div>
     </div>
 
@@ -71,7 +97,7 @@
         <div class="footer-content">
             <div class="row">
                 <div class="col">
-                    <img src="assets/logo-01.png" class="logo">
+                    <img src="/assets/logo-01.png" class="logo">
                     <p>Surabaya merupakan sebuah daerah yang menjadi Ibu Kota Provinsi Jawa Timur. Surabaya memiliki hari jadi pada tanggal 31 Mei 1293. Kota Surabaya juga menjadi kota metropolitan terbesar di Provinsi Jawa Timur.</p>
                 </div>
                 <div class="col">
