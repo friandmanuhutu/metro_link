@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('acc_agenda_kota', function (Blueprint $table) {
             $table->id();
-            $table->string('username'); // Username of the user who submitted the data
-            $table->string('Nama_Penyelenggara'); // Nama Penyelenggara
-            $table->string('Nama_Event'); // Nama Event
-            $table->string('kategori'); // Kategori Event
-            $table->text('Deskripsi_Event'); // Deskripsi Event
-            $table->date('Tanggal_Pelaksanaan'); // Tanggal Pelaksanaan
-            $table->timestamps(); // Created at and Updated at timestamps
+            $table->string('username');
+            $table->string('Nama_Penyelenggara');
+            $table->string('Nama_Event');
+            $table->string('kategori');
+            $table->text('Deskripsi_Event');
+            $table->date('Tanggal_Pelaksanaan');
+            $table->timestamps(); 
         });
     }
 
