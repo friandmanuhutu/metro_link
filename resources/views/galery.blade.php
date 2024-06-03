@@ -39,22 +39,21 @@
     </div>
     <!-- GALLERY -->
     <div class="gallery-service">
-        <h2>SURABAYA</h2>
         <div class="row">
             <div class="gallery-col">
-                <img src="/assets/bima.jpg">
+                <img src="/assets/bima2.jpg">
                 <div class="layer">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium praesentium aliquam error earum delectus, voluptas aspernatur voluptatum odit laboriosam, totam officia illum quia vitae expedita a. Dolores, sapiente cumque. Odio!</p>
                 </div>
             </div>
             <div class="gallery-col">
-                <img src="/assets/bima.jpg">
+                <img src="/assets/bima3.jpg">
                 <div class="layer">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus fuga accusantium vitae cumque, quasi aut culpa et alias aspernatur esse eaque tempore corporis distinctio, ad fugit iure, perferendis dicta! Dolorem.</p>
                 </div>
             </div>
             <div class="gallery-col">
-                <img src="/assets/bima.jpg">
+                <img src="/assets/bima4.jpg">
                 <div class="layer">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, corporis. In consequuntur molestiae aliquam est pariatur labore exercitationem! Porro nihil, pariatur consequatur voluptates laboriosam quisquam ratione quo veniam quae quasi.</p>
                 </div>
@@ -62,108 +61,61 @@
         </div>
         <div class="row">
             <div class="gallery-col">
-                <img src="/assets/bima.jpg">
+                <img src="/assets/bima5.jpg">
                 <div class="layer">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sint adipisci, iure ipsum nam quas fugit voluptate blanditiis minima fugiat iusto dolor nulla dignissimos, optio voluptatibus! Ipsa hic at eaque?</p>
                 </div>
             </div>
             <div class="gallery-col">
-                <img src="/assets/bima.jpg">
+                <img src="/assets/bima6.jpg">
                 <div class="layer">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo fuga amet inventore, illum autem ipsa placeat, non tempore tempora quam distinctio qui libero voluptatibus omnis eveniet ratione error, facilis dolore?</p>
                 </div>
             </div>
             <div class="gallery-col">
-                <img src="/assets/bima.jpg">
+                <img src="/assets/bima7.jpg">
                 <div class="layer">
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil repellendus sint deserunt, cupiditate culpa nesciunt cumque pariatur labore rerum error magnam quos laudantium aperiam vitae? Quae quo asperiores eligendi deleniti?</p>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="gallery-service">
-        <h2>MALANG</h2>
         <div class="row">
             <div class="gallery-col">
-                <img src="/assets/bima.jpg">
+                <img src="/assets/bima8.jpg">
                 <div class="layer">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum fugit quisquam eligendi dolor fugiat. Consectetur praesentium ab, deserunt fugit similique aspernatur? Veritatis quia magni tempora repudiandae iste repellendus officia blanditiis?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sint adipisci, iure ipsum nam quas fugit voluptate blanditiis minima fugiat iusto dolor nulla dignissimos, optio voluptatibus! Ipsa hic at eaque?</p>
                 </div>
             </div>
             <div class="gallery-col">
-                <img src="/assets/bima.jpg">
+                <img src="/assets/bima9.jpg">
                 <div class="layer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid a nam vero modi, ad, sit sequi facilis animi iusto beatae minus error quis itaque id, commodi maiores hic. Quaerat, consectetur?</p>>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo fuga amet inventore, illum autem ipsa placeat, non tempore tempora quam distinctio qui libero voluptatibus omnis eveniet ratione error, facilis dolore?</p>
                 </div>
             </div>
             <div class="gallery-col">
-                <img src="/assets/bima.jpg">
+                <img src="/assets/bima10.jpg">
                 <div class="layer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, omnis dicta! Quas sequi at debitis dolorem necessitatibus labore obcaecati perferendis veritatis! Dolore commodi minima delectus ipsum facere, maiores aspernatur explicabo.</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil repellendus sint deserunt, cupiditate culpa nesciunt cumque pariatur labore rerum error magnam quos laudantium aperiam vitae? Quae quo asperiores eligendi deleniti?</p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="gallery-col">
-                <img src="/assets/bima.jpg">
+                <img src="/assets/bima1.jpg">
                 <div class="layer">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum similique, minus aperiam ducimus maiores reprehenderit fugiat corrupti excepturi atque ratione, architecto, dolores consequuntur! Asperiores fugiat corporis facilis soluta non culpa!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sint adipisci, iure ipsum nam quas fugit voluptate blanditiis minima fugiat iusto dolor nulla dignissimos, optio voluptatibus! Ipsa hic at eaque?</p>
                 </div>
             </div>
             <div class="gallery-col">
-                <img src="/assets/bima.jpg">
+                <img src="/assets/bima11.jpg">
                 <div class="layer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam magnam aperiam recusandae dolore earum quia, iusto pariatur laborum accusamus, quibusdam veniam sapiente nam quisquam. Velit voluptatum similique non optio ab.</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo fuga amet inventore, illum autem ipsa placeat, non tempore tempora quam distinctio qui libero voluptatibus omnis eveniet ratione error, facilis dolore?</p>
                 </div>
             </div>
             <div class="gallery-col">
-                <img src="/assets/bima.jpg">
+                <img src="/assets/bima12.jpg">
                 <div class="layer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ratione nemo expedita illo architecto placeat deserunt illum in, laborum ab. Beatae totam ea eum quaerat rerum laborum nostrum quidem enim!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="gallery-service">
-        <h2>JAKARTA</h2>
-        <div class="row">
-            <div class="gallery-col">
-                <img src="/assets/bima.jpg">
-                <div class="layer">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum fugit quisquam eligendi dolor fugiat. Consectetur praesentium ab, deserunt fugit similique aspernatur? Veritatis quia magni tempora repudiandae iste repellendus officia blanditiis?</p>
-                </div>
-            </div>
-            <div class="gallery-col">
-                <img src="/assets/bima.jpg">
-                <div class="layer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid a nam vero modi, ad, sit sequi facilis animi iusto beatae minus error quis itaque id, commodi maiores hic. Quaerat, consectetur?</p>>
-                </div>
-            </div>
-            <div class="gallery-col">
-                <img src="/assets/bima.jpg">
-                <div class="layer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, omnis dicta! Quas sequi at debitis dolorem necessitatibus labore obcaecati perferendis veritatis! Dolore commodi minima delectus ipsum facere, maiores aspernatur explicabo.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="gallery-col">
-                <img src="/assets/bima.jpg">
-                <div class="layer">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum similique, minus aperiam ducimus maiores reprehenderit fugiat corrupti excepturi atque ratione, architecto, dolores consequuntur! Asperiores fugiat corporis facilis soluta non culpa!</p>
-                </div>
-            </div>
-            <div class="gallery-col">
-                <img src="/assets/bima.jpg">
-                <div class="layer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam magnam aperiam recusandae dolore earum quia, iusto pariatur laborum accusamus, quibusdam veniam sapiente nam quisquam. Velit voluptatum similique non optio ab.</p>
-                </div>
-            </div>
-            <div class="gallery-col">
-                <img src="/assets/bima.jpg">
-                <div class="layer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ratione nemo expedita illo architecto placeat deserunt illum in, laborum ab. Beatae totam ea eum quaerat rerum laborum nostrum quidem enim!</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil repellendus sint deserunt, cupiditate culpa nesciunt cumque pariatur labore rerum error magnam quos laudantium aperiam vitae? Quae quo asperiores eligendi deleniti?</p>
                 </div>
             </div>
         </div>
