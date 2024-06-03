@@ -25,6 +25,7 @@
             width: 300px;
             justify-content: space-around;
             margin-bottom: 15px;
+            border-radius: 20px;
         }
     </style>
     <title>METROLINK</title>

@@ -15,9 +15,7 @@ class AdminController extends Controller
     }
 
     function admin(){
-        echo "admin Metrolink";
-        echo "<h1>". Auth::user()->name ."</h1>";
-        echo "<a href='/logout'>Logout >></a>";
+        return view("dashboardAdmin");
     }
 
     function user(){
