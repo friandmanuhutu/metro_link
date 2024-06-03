@@ -18,6 +18,10 @@ class AdminController extends Controller
         return view("dashboardAdmin");
     }
 
+    function AddAgendakota(){
+        return view("admin_agendaKota");
+    }
+
     function user(){
         return view("index");
     }

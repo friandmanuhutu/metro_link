@@ -19,6 +19,7 @@ Route::get('/home', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'admin'])->middleware('UserAkses:admin');
+    Route::get('/admin/agenda_kota', [AdminController::class, 'AddAgendakota']);
     Route::get('/metrolink', [AdminController::class, 'user'])->middleware('UserAkses:user');
     Route::get('/metrolink/about_us', [AdminController::class, 'about_us']);
     Route::get('/metrolink/service', [AdminController::class, 'service']);
