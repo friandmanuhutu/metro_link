@@ -20,7 +20,7 @@
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
-                        <span class="title">{{ Auth::user()->name }}</span>
+                        <span class="title">{{ Auth::user()->username }}</span>
                     </a>
                 </li>
 
@@ -48,6 +48,15 @@
                             <ion-icon name="chatbubble-outline"></ion-icon>
                         </span>
                         <span class="title">Pengaduan</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/admin/akun_admin">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <span class="title">Admin Akun</span>
                     </a>
                 </li>
 
@@ -81,8 +90,8 @@
             <div class="cardBox">
                 <div class="card">
                     <div>
-                        <div class="numbers">1,504</div>
-                        <div class="cardName">Daily Views</div>
+                        <div class="numbers">0</div>
+                        <div class="cardName">Total Pengaduan</div>
                     </div>
 
                     <div class="iconBx">
@@ -92,8 +101,8 @@
 
                 <div class="card">
                     <div>
-                        <div class="numbers">80</div>
-                        <div class="cardName">Sales</div>
+                        <div class="numbers">{{ $totalPengajuanAgenda }}</div>
+                        <div class="cardName">Total Pengajuan Agenda</div>
                     </div>
 
                     <div class="iconBx">
@@ -103,8 +112,8 @@
 
                 <div class="card">
                     <div>
-                        <div class="numbers">284</div>
-                        <div class="cardName">Comments</div>
+                        <div class="numbers">{{ $totalAgendaTersedia }}</div>
+                        <div class="cardName">Total Agenda Tersedia</div>
                     </div>
 
                     <div class="iconBx">
@@ -114,12 +123,12 @@
 
                 <div class="card">
                     <div>
-                        <div class="numbers">$7,842</div>
-                        <div class="cardName">Earning</div>
+                        <div class="numbers">{{ $totalAdminAkun }}</div>
+                        <div class="cardName">Total Admin Akun</div>
                     </div>
 
                     <div class="iconBx">
-                        <ion-icon name="cash-outline"></ion-icon>
+                        <ion-icon name="people-outline"></ion-icon>
                     </div>
                 </div>
             </div>

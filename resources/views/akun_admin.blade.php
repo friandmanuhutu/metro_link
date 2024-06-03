@@ -34,7 +34,7 @@
                 </li>
 
                 <li>
-                    <a href="">
+                    <a href="/admin/agenda_kota">
                         <span class="icon">
                             <ion-icon name="business-outline"></ion-icon>
                         </span>
@@ -52,7 +52,7 @@
                 </li>
 
                 <li>
-                    <a href="/admin/akun_admin">
+                    <a href="">
                         <span class="icon">
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </span>
@@ -87,6 +87,9 @@
             </div>
 
             <div class="details">
+                <a href="" class="btn-accadmin">
+                    create acc
+                </a>
                 <div class="recentOrders">
 
                     <div class="cardHeader">
@@ -98,23 +101,17 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Username</th>
-                                <th>Nama Penyelenggara</th>
-                                <th>Nama Event</th>
-                                <th>Kategori</th>
-                                <th>Deskripsi Event</th>
-                                <th>Tanggal Pelaksanaan</th>
+                                <th>Email</th>
+                                <th>Tipe User</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($AccagendaKotas as $AccagendaKota)
+                            @foreach ($users as $user)
                             <tr>
-                                <td>{{ $agendaKota->id }}</td>
-                                <td>{{ $agendaKota->username }}</td>
-                                <td>{{ $agendaKota->Nama_Penyelenggara }}</td>
-                                <td>{{ $agendaKota->Nama_Event }}</td>
-                                <td>{{ $agendaKota->kategori }}</td> <!-- Menampilkan kategori -->
-                                <td>{{ $agendaKota->Deskripsi_Event }}</td>
-                                <td>{{ $agendaKota->Tanggal_Pelaksanaan }}</td>
+                                <td>{{ $user->id }}</td>
+                                <td>{{ $user->username }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->tipe_user }}</td>
                             </tr>
                             @endforeach
                         </tbody>

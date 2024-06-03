@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AccAgendaKota;
 use App\Models\agenda_kota;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,6 +18,21 @@ class AdminController extends Controller
 
     function admin(){
         return view("dashboardAdmin");
+    }
+
+    public function count()
+    {
+
+        $totalPengajuanAgenda = AccAgendaKota::count();
+        $totalAgendaTersedia =  agenda_kota::count();
+        $totalAdminAkun = User::where('tipe_user', 'admin')->count();
+
+        return view('dashboardAdmin', compact( 'totalPengajuanAgenda', 'totalAgendaTersedia', 'totalAdminAkun'));
+    }
+
+    function akun_admin(){
+        $users = User::where('tipe_user', 'admin')->get();
+        return view('akun_admin', compact('users'));
     }
 
     function AddAgendakota(){
@@ -41,6 +58,11 @@ class AdminController extends Controller
     public function tampilkan(){
         $agendaKotas = agenda_kota::all();
         return view('agenda_kota', compact('agendaKotas'));
+    }
+
+    public function AccAgendaKota(){
+        $AccagendaKotas = AccAgendaKota::all();
+        return view('admin_agendakota', compact('AccagendaKotas'));
     }
 
     public function createAgenda(){

@@ -29,13 +29,13 @@ body {
 
 /* =============== Navigation ================ */
 .navigation {
-  position: fixed;
-  width: 300px;
-  height: 100%;
-  background: var(--blue);
-  border-left: 10px solid var(--blue);
-  transition: 0.5s;
-  overflow: hidden;
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: #1e1e1e;
+    border-left: 10px solid #1e1e1e;
+    transition: 0.5s;
+    overflow: hidden;
 }
 .navigation.active {
   width: 80px;
@@ -76,7 +76,7 @@ body {
 }
 .navigation ul li:hover a,
 .navigation ul li.hovered a {
-  color: var(--blue);
+  color: #1e1e1e;
 }
 
 .navigation ul li a .icon {
@@ -235,7 +235,7 @@ body {
   position: relative;
   font-weight: 500;
   font-size: 2.5rem;
-  color: var(--blue);
+  color: #1e1e1e;
 }
 
 .cardBox .card .cardName {
@@ -250,7 +250,7 @@ body {
 }
 
 .cardBox .card:hover {
-  background: var(--blue);
+  background: #ff9e0d;
 }
 .cardBox .card:hover .numbers,
 .cardBox .card:hover .cardName,
@@ -263,7 +263,6 @@ body {
   position: relative;
   width: 100%;
   padding: 20px;
-  display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 30px;
   /* margin-top: 10px; */
@@ -272,26 +271,27 @@ body {
 .details .recentOrders {
   position: relative;
   display: grid;
-  min-height: 500px;
   background: var(--white);
   padding: 20px;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
+  margin-top: 40px;
 }
 
 .details .cardHeader {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-bottom:  40px;
 }
 .cardHeader h2 {
   font-weight: 600;
-  color: var(--blue);
+  color: #1e1e1e;
 }
 .cardHeader .btn {
   position: relative;
   padding: 5px 10px;
-  background: var(--blue);
+  background: #1e1e1e;
   text-decoration: none;
   color: var(--white);
   border-radius: 6px;
@@ -312,18 +312,21 @@ body {
 .details .recentOrders table tr:last-child {
   border-bottom: none;
 }
-.details .recentOrders table tbody tr:hover {
-  background: var(--blue);
+
+/* .details .recentOrders table tbody tr:hover {
+  background: #1e1e1e;
   color: var(--white);
-}
+} */
+
 .details .recentOrders table tr td {
-  padding: 10px;
+  padding: 31px 0px 15px 0px;
+  text-align: center;
 }
 .details .recentOrders table tr td:last-child {
-  text-align: end;
+  text-align: center;
 }
 .details .recentOrders table tr td:nth-child(2) {
-  text-align: end;
+  text-align: center;
 }
 .details .recentOrders table tr td:nth-child(3) {
   text-align: center;
@@ -403,6 +406,66 @@ body {
 }
 .recentCustomers table tr:hover td h4 span {
   color: var(--white);
+}
+
+/* Btn-create */
+.details .btn-accadmin{
+    text-decoration: none;
+    padding: 15px 20px 15px 20px;
+    background-color: #ff9e0d;
+    color: aliceblue;
+    border-radius: 10px;
+}
+
+.details .btn-accadmin:hover{
+    text-decoration: none;
+    padding: 15px 20px 15px 20px;
+    background-color: #1e1e1e;
+    color: aliceblue;
+}
+
+/* Tabel Menunggu persetujuan */
+.table-wrapper {
+    padding: 75px 70px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    max-width: 100%; /* Membatasi lebar maksimum tabel agar tidak melebihi lebar tampilan */
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td,
+.fl-table th {
+    text-align: center;
+    padding: 12px 30px;
+    white-space: normal; /* Mengizinkan konten tabel untuk mengalir secara vertikal */
+}
+
+.fl-table td {
+    border: 1px solid #cacaca;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #333;
+}
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #ff9e0d;
+    min-width: 60px;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #f8f8f8;
 }
 
 /* ====================== Responsive Design ========================== */
