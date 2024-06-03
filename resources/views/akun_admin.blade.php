@@ -87,7 +87,7 @@
             </div>
 
             <div class="details">
-                <a href="" class="btn-accadmin">
+                <a href="/admin/akun_admin/create" class="btn-accadmin">
                     create acc
                 </a>
                 <div class="recentOrders">
@@ -112,6 +112,14 @@
                                 <td>{{ $user->username }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->tipe_user }}</td>
+                                <td>
+                                    <a href="/admin/akun_admin/edit/{{ $user->id }}" class="btn-edit">Edit</a>
+                                    <form action="/admin/akun_admin/delete/{{ $user->id }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn-delete" onclick="return confirm('Are you sure you want to delete this user?');">Delete</button>
+                                    </form>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

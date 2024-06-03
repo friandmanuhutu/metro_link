@@ -86,67 +86,44 @@
                 </div>
             </div>
 
-            <!-- ======================= Cards ================== -->
-            <div class="cardBox">
-                <div class="card">
-                    <div>
-                        <div class="numbers">0</div>
-                        <div class="cardName">Total Pengaduan</div>
-                    </div>
+            <!-- ======================= form ================== -->
 
-                    <div class="iconBx">
-                        <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">{{ $totalPengajuanAgenda }}</div>
-                        <div class="cardName">Total Pengajuan Agenda</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="cart-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">{{ $totalAgendaTersedia }}</div>
-                        <div class="cardName">Total Agenda Tersedia</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="chatbubbles-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">{{ $totalAdminAkun }}</div>
-                        <div class="cardName">Total Admin Akun</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="people-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">{{ $totalUserAkun }}</div>
-                        <div class="cardName">Total User Akun</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="people-outline"></ion-icon>
-                    </div>
-                </div>
+            <div class="form-createAcc">
+                <form action="/admin/akun_admin/store" method="POST">
+                    <h1 style="margin-bottom: 30px; text-align: center;">Create Account</h1>
+                    @csrf
+                    <input type="text" id="username" name="username" value="{{ old('username') }}" placeholder="Enter Username" required>
+                    <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Enter Email" required>
+                    <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                    <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password" required>
+                    <select id="tipe_user" name="tipe_user" required>
+                        <option value="" disabled selected>Select User Type</option>
+                        <option value="user" {{ old('tipe_user') == 'user' ? 'selected' : '' }}>User</option>
+                        <option value="admin" {{ old('tipe_user') == 'admin' ? 'selected' : '' }}>Admin</option>
+                    </select>
+                    <button type="submit">Create</button>
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                </form>
             </div>
     </div>
 
     <!-- =========== Scripts =========  -->
     <script src="/js/admin.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        // Add the 'visible' class to the form container to trigger the animation
+        document.querySelector('.form-createAcc').classList.add('visible');
+    });
+    </script>
 
     <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

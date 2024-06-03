@@ -7,6 +7,8 @@ use App\Models\agenda_kota;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -26,13 +28,87 @@ class AdminController extends Controller
         $totalPengajuanAgenda = AccAgendaKota::count();
         $totalAgendaTersedia =  agenda_kota::count();
         $totalAdminAkun = User::where('tipe_user', 'admin')->count();
+        $totalUserAkun = User::where('tipe_user', 'user')->count();
 
-        return view('dashboardAdmin', compact( 'totalPengajuanAgenda', 'totalAgendaTersedia', 'totalAdminAkun'));
+        return view('dashboardAdmin', compact( 'totalPengajuanAgenda', 'totalAgendaTersedia', 'totalAdminAkun','totalUserAkun' ));
     }
 
     function akun_admin(){
-        $users = User::where('tipe_user', 'admin')->get();
+        $users = User::all();
         return view('akun_admin', compact('users'));
+    }
+
+    function Admin_createAkun(){
+        return view('Create_adminAkun');
+    }
+
+    public function Admin_storeAkun(Request $request)
+    {
+        // Custom validation logic
+        $validator = Validator::make($request->all(), [
+            'username' => 'required|string|max:255|unique:users',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+        // Check if validation fails
+        if ($validator->fails()) {
+            $messages = $validator->messages();
+            if ($messages->has('username')) {
+                $error = 'Username already exists.';
+            } elseif ($messages->has('email')) {
+                $error = 'Email already exists.';
+            }
+            return redirect()->back()->withErrors($validator)->withInput()->with('error', $error);
+    }
+
+    try {
+        // Create new user
+        $user = new User();
+        $user->username = $request->username;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        return redirect('/admin/akun_admin')->with('success', 'Register successfully');
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->back()->with('error', 'An error occurred while registering');
+        }
+    }
+
+
+    public function admin_editAkun($id)
+    {
+        $user = User::find($id);
+        return view('edit_akunAdmin', compact('user'));
+    }
+
+    public function admin_updateAkun(Request $request, $id)
+    {
+        $request->validate([
+            'username' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'tipe_user' => 'required|string|max:255',
+        ]);
+
+        $user = User::find($id);
+        $user->username = $request->username;
+        $user->email = $request->email;
+        $user->tipe_user = $request->tipe_user;
+        $user->save();
+
+        return redirect('/admin/akun_admin')->with('success', 'User updated successfully');
+    }
+
+    public function akun_destroy($id)
+    {
+        $user = User::find($id);
+        if ($user) {
+            $user->delete();
+            return redirect('/admin')->with('success', 'User deleted successfully');
+        } else {
+            return redirect('/admin')->with('error', 'User not found');
+        }
     }
 
     function AddAgendakota(){
