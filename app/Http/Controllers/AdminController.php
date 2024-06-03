@@ -33,6 +33,8 @@ class AdminController extends Controller
         return view('dashboardAdmin', compact( 'totalPengajuanAgenda', 'totalAgendaTersedia', 'totalAdminAkun','totalUserAkun' ));
     }
 
+    // CRUD AKUN DI ADMIN =================================================================================================================
+
     function akun_admin(){
         $users = User::all();
         return view('akun_admin', compact('users'));
@@ -43,23 +45,25 @@ class AdminController extends Controller
     }
 
     public function Admin_storeAkun(Request $request)
-    {
-        // Custom validation logic
-        $validator = Validator::make($request->all(), [
-            'username' => 'required|string|max:255|unique:users',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
+{
+    // Custom validation logic
+    $validator = Validator::make($request->all(), [
+        'username' => 'required|string|max:255|unique:users',
+        'email' => 'required|string|email|max:255|unique:users',
+        'password' => 'required|string|min:6|confirmed',
+    ]);
 
-        // Check if validation fails
-        if ($validator->fails()) {
-            $messages = $validator->messages();
-            if ($messages->has('username')) {
-                $error = 'Username already exists.';
-            } elseif ($messages->has('email')) {
-                $error = 'Email already exists.';
-            }
-            return redirect()->back()->withErrors($validator)->withInput()->with('error', $error);
+    // Check if validation fails
+    if ($validator->fails()) {
+        $messages = $validator->messages();
+        if ($messages->has('username')) {
+            $error = 'Username telah digunakan.';
+        } elseif ($messages->has('email')) {
+            $error = 'Email telah digunakan.';
+        } else {
+            $error = 'Periksa kembali data anda';
+        }
+        return redirect()->back()->withErrors($validator)->withInput()->with('error', $error);
     }
 
     try {
@@ -71,9 +75,23 @@ class AdminController extends Controller
         $user->save();
 
         return redirect('/admin/akun_admin')->with('success', 'Register successfully');
-        } catch (\Illuminate\Database\QueryException $e) {
-            return redirect()->back()->with('error', 'An error occurred while registering');
-        }
+    } catch (\Illuminate\Database\QueryException $e) {
+        return redirect()->back()->with('error', 'An error occurred while registering');
+    }
+}
+
+
+    public function search_adminAkun(Request $request)
+    {
+        $search = $request->input('search');
+
+        $users = User::when($search, function ($query, $search) {
+            return $query->where('username', 'like', "%{$search}%")
+                        ->orWhere('email', 'like', "%{$search}%")
+                        ->orWhere('tipe_user', 'like', "%{$search}%");
+        })->get();
+
+        return view('akun_admin', compact('users'));
     }
 
 
@@ -110,6 +128,8 @@ class AdminController extends Controller
             return redirect('/admin')->with('error', 'User not found');
         }
     }
+
+    // ============================================================================================================================================
 
     function AddAgendakota(){
         return view("admin_agendaKota");

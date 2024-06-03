@@ -8,6 +8,27 @@
     <title>Admin Dashboard</title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="/css/dashAdmin.css">
+    <style>
+        .alert-danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            padding: .75rem 1.25rem;
+            margin-bottom: 1rem;
+            border: 1px solid transparent;
+            border-radius: .25rem;
+        }
+
+        .alert-danger ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .alert-danger ul li {
+            margin-bottom: 7px;
+        }
+    </style>
 </head>
 
 <body>
@@ -79,18 +100,22 @@
                 </div>
 
                 <div class="search">
-                    <label>
-                        <input type="text" placeholder="Search here">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </label>
+                    <form action="/admin/akun_admin" method="GET">
+                        <label>
+                            <input type="text" name="search" placeholder="Search here" value="{{ request('search') }}">
+                            <ion-icon name="search-outline"></ion-icon>
+                            <button type="submit" style="display: none"></button>
+                        </label>
+                    </form>
                 </div>
             </div>
 
             <!-- ======================= form ================== -->
-
             <div class="form-createAcc">
                 <form action="/admin/akun_admin/store" method="POST">
-                    <h1 style="margin-bottom: 30px; text-align: center;">Create Account</h1>
+                    <span class="btn-back"><a href="/admin/akun_admin" style="text-decoration: none; color: white; padding: 5px 16px; background-color: black; font-size: 10px;">Back</a></span>
+                    <h1 style="margin-bottom: 30px; text-align: center;">Create Account
+                    </h1>
                     @csrf
                     <input type="text" id="username" name="username" value="{{ old('username') }}" placeholder="Enter Username" required>
                     <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Enter Email" required>
@@ -102,6 +127,11 @@
                         <option value="admin" {{ old('tipe_user') == 'admin' ? 'selected' : '' }}>Admin</option>
                     </select>
                     <button type="submit">Create</button>
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -113,6 +143,7 @@
                     @endif
                 </form>
             </div>
+        </div>
     </div>
 
     <!-- =========== Scripts =========  -->
@@ -120,9 +151,9 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-        // Add the 'visible' class to the form container to trigger the animation
-        document.querySelector('.form-createAcc').classList.add('visible');
-    });
+            // Add the 'visible' class to the form container to trigger the animation
+            document.querySelector('.form-createAcc').classList.add('visible');
+        });
     </script>
 
     <!-- ====== ionicons ======= -->

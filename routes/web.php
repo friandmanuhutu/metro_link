@@ -24,6 +24,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/agenda_kota', [AdminController::class, 'AddAgendakota']);
     Route::get('/admin/agenda_kota', [AdminController::class, 'accAgendaKota']);
     Route::get('/admin/akun_admin', [AdminController::class, 'akun_admin']);
+    Route::get('/admin/akun_admin', [AdminController::class, 'search_adminAkun']);
     Route::get('/admin/akun_admin/create', [AdminController::class, 'Admin_createAkun']);
     Route::post('/admin/akun_admin/store', [AdminController::class, 'Admin_storeAkun']);
     Route::get('/admin/akun_admin/edit/{id}', [AdminController::class, 'admin_editAkun']);

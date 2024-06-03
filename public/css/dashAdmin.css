@@ -275,7 +275,7 @@ body {
   padding: 20px;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .details .cardHeader {
@@ -411,21 +411,21 @@ body {
 /* Btn-create */
 .details .btn-accadmin{
     text-decoration: none;
-    padding: 15px 20px 15px 20px;
-    background-color: #008a00;
+    padding: 12px 22px 12px 22px;
+    background-color: #287328;
     color: aliceblue;
     border-radius: 10px;
 }
 
 .details .btn-accadmin:hover{
     text-decoration: none;
-    padding: 15px 20px 15px 20px;
     background-color: #1e1e1e;
-    color: aliceblue;
 }
 
+
+/* Tombol Edit */
 .details .btn-edit{
-  background-color: #008a00;
+  background-color: #287328;
   padding: 10px 30px 10px 30px;
   color: azure;
   text-decoration: none;
@@ -440,7 +440,7 @@ body {
 }
 
 .btn-delete {
-  background-color: #f44336;
+  background-color: #b40c00;
   color: white;
   padding: 10px 20px 10px 20px;
   text-align: center;
@@ -490,11 +490,14 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 25px;
+  margin-bottom: 0px;
 }
 
 .form-createAcc button:hover {
   background-color: #ff9e0d;
 }
+
+
 
 /* Alert styles */
 .alert {
@@ -505,6 +508,7 @@ body {
 }
 
 .alert-danger {
+  margin-top: 20px;
   color: white;
   background-color: #f44336;
   border-color: #f44336;
@@ -591,8 +595,59 @@ body {
   list-style-type: none;
 }
 
+/* Edit AKun */
+.form-editAcc {
+  max-width: 50%;
+  margin: 5% auto;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transisi untuk animasi */
+}
 
-/* ====================== Responsive Design ========================== */
+.form-editAcc.label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-editAcc input[type="text"],
+.form-editAcc input[type="email"],
+.form-editAcc select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-editAcc button {
+  width: 100%;
+  padding: 10px;
+  background-color: #1e1e1e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.form-editAcc button:hover {
+  background-color: #ff9e0d;
+}
+
+/* Tampilkan elemen dengan animasi */
+.form-editAcc.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+/* =============== Responsive Design ================ */
 @media (max-width: 991px) {
   .navigation {
     left: -300px;
@@ -623,6 +678,33 @@ body {
   .status.inProgress {
     white-space: nowrap;
   }
+  .details .recentOrders table {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .details .recentOrders table tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .details .recentOrders table th{
+    display: none;
+  }
+  .details .recentOrders table td {
+    width: 100%;
+    text-align: center;
+  }
+  .details .cardHeader {
+    text-align: center;
+    justify-content: center;
+  }
+  .details .recentOrders table tr td {
+    padding: 7px;
+  }
+  /* .details .btn-edit {
+
+  } */
 }
 
 @media (max-width: 480px) {
@@ -654,3 +736,4 @@ body {
     left: initial;
   }
 }
+

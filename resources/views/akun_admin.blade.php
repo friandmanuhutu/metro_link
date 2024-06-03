@@ -79,10 +79,13 @@
                 </div>
 
                 <div class="search">
-                    <label>
-                        <input type="text" placeholder="Search here">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </label>
+                    <form action="/admin/akun_admin" method="GET">
+                        <label>
+                            <input type="text" name="search" placeholder="Search here" value="{{ request('search') }}">
+                            <ion-icon name="search-outline"></ion-icon>
+                            <button type="submit" style="display: none"></button>
+                        </label>
+                    </form>
                 </div>
             </div>
 

@@ -68,23 +68,40 @@
         </div>
 
         <div class="main">
-            <div class="details">
-                <form action="/admin/akun_admin/update/{{ $user->id }}" method="POST">
-                    @csrf
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" value="{{ $user->username }}" required>
+                <div class="form-editAcc hidden">
+                    <h1 style="margin-bottom: 20px;text-align: center;">Edit Data</h1>
+                    <form action="/admin/akun_admin/update/{{ $user->id }}" method="POST">
+                        @csrf
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" value="{{ $user->username }}" required placeholder="Enter your username">
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" value="{{ $user->email }}" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" value="{{ $user->email }}" required placeholder="Enter your email">
 
-                    <label for="tipe_user">Tipe User:</label>
-                    <input type="text" id="tipe_user" name="tipe_user" value="{{ $user->tipe_user }}" required>
+                        <label for="tipe_user">Tipe User:</label>
+                        <select id="tipe_user" name="tipe_user" required>
+                            <option value="user" {{ $user->tipe_user == 'user' ? 'selected' : '' }}>User</option>
+                            <option value="admin" {{ $user->tipe_user == 'admin' ? 'selected' : '' }}>Admin</option>
+                        </select>
 
-                    <button type="submit">Update</button>
-                </form>
-            </div>
+                        <button type="submit">Update</button>
+                    </form>
+                </div>
         </div>
+
     </div>
     <script src="/js/admin.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        // Ambil elemen form-editAcc
+        var formEditAcc = document.querySelector(".form-editAcc");
+
+        // Tambahkan kelas "visible" setelah elemen dimuat
+        formEditAcc.classList.add("visible");
+        });
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
