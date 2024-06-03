@@ -327,7 +327,7 @@ nav .fa{
 }
 
 .gallery-service .layer p {
-    width: 100%;
+    width: 90%;
     font-weight: 800 ;
     color: #fff;
     font-size: 12px;
@@ -336,12 +336,31 @@ nav .fa{
     transform: translateX(-50%);
     position: absolute;
     opacity: 0;
-    transition: 0.5s;
+
+}
+.gallery-service .layer h2 {
+    width: 100%;
+    font-weight: 1000 ;
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
 }
 
 .gallery-service .layer:hover p{
     bottom: 5%;
     opacity: 1;
+    text-align: justify;
+    transition: 0.5s;
+}
+
+.gallery-service .layer:hover h2{
+    bottom: 5%;
+    opacity: 1;
+    transition: 0.5s;
 }
 
 .see-more {
