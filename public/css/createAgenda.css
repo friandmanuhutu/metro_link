@@ -9,9 +9,8 @@ body {
 }
 
 .container {
-    margin-top: 70px;
     padding: 40px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
 }
@@ -73,7 +72,7 @@ textarea.form-control {
     transition: background-color 0.3s ease;
     /* float: right; Align button to the right */
     margin-top: 10px;
-    margin-left: 1130px;
+    margin-left: 1110px;
 }
 
 #submit-agenda:hover {
