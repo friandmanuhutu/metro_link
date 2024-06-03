@@ -49,6 +49,14 @@ class AdminController extends Controller
         return view('create_agendaKota');
     }
 
+    public function formPengaduan(){
+        return view('form_pengaduan');
+    }
+
+    public function formPenilaian(){
+        return view('penilaian');
+    }
+
 
 
 }

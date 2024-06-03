@@ -22,6 +22,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/metrolink', [AdminController::class, 'user'])->middleware('UserAkses:user');
     Route::get('/metrolink/about_us', [AdminController::class, 'about_us']);
     Route::get('/metrolink/service', [AdminController::class, 'service']);
+    Route::get('/metrolink/service/ajukan_kendala', [AdminController::class, 'formPengaduan']);
+    Route::get('/metrolink/service/berikan_penilaian', [AdminController::class,'formPenilaian']);
     Route::get('/metrolink/galery', [AdminController::class, 'galery']);
     Route::get('/metrolink/agenda_kota', [AdminController::class, 'tampilkan']);
     Route::get('/metrolink/agenda_kota/create', [AdminController::class, 'createAgenda']);

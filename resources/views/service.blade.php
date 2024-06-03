@@ -46,20 +46,19 @@
             <h3>INFORMASI KOTA</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iusto, voluptate quae expedita optio ex Illum</p><br>
 
-            <button class="btn-service">See More</button>
+            <a href="/metrolink" class="btn-service1">See more</a>
         </div>
         <div class="box-service">
             <img src="/assets/service-4.jpg" alt=""><br>
             <h3>PROBLEM COMPLAINTS</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iusto, voluptate quae expedita optio ex Illum</p><br>
-            <button class="btn-service">See More</button>
+            <a href="/metrolink/service/ajukan_kendala" class="btn-service1">See more</a>
         </div>
         <div class="box-service">
             <img src="/assets/service-5.jpg" alt=""><br>
             <h3>GIVE US RATING</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iusto, voluptate quae expedita optio ex Illum </p><br>
-
-            <button class="btn-service">See More</button>
+            <a href="/metrolink/service/berikan_penilaian" class="btn-service1">See more</a>
         </div>
     </div>
 

@@ -191,7 +191,7 @@ nav .fa{
 
 .box-service {
     width: 320px;
-    height: 500px;
+    height: 550px;
     background: #ff9e0d;
     border-radius: 20px;
     display: grid;
@@ -223,19 +223,19 @@ nav .fa{
     font-weight: 50;
 }
 
-.btn-service {
-    place-items: center;
+.btn-service1 {
     color: #000;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    outline: none;
-    cursor: pointer;
-    font-style: italic;
     margin-bottom: 20px;
-    margin-top: 10px;
+    padding: 11px 20px;
+    background-color: #fcfcfc;
+    width: 170px;
+    border-radius: 3px;
+    text-align: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
+
+
 
 .btn-service:hover {
     background-color: #ff9e0d;
