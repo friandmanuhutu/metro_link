@@ -25,6 +25,21 @@
             width: 300px;
             justify-content: space-around;
             margin-bottom: 15px;
+            border-radius: 20px;
+        }
+        .alert-danger {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 300px;
+            margin-bottom: 15px;
+            border-radius: 20px;
+            padding: 10px;
+            font-size: 13px;
+            margin-top: 27px;
         }
     </style>
     <title>METROLINK</title>
@@ -39,27 +54,43 @@
                 @csrf
                 <h1>Create Account</h1>
                 <span>or use your email for registration</span>
-                <input type="text" placeholder="Name" name="name" value="{{ old('name') }}" required>
+                <input type="text" placeholder="Username" name="username" value="{{ old('username') }}" required>
                 <input type="email" placeholder="Email" name="email" value="{{ old('email') }}" required>
                 <input type="password" placeholder="Password" name="password" id="password" required>
                 <input type="password" placeholder="Confirm Password" name="password_confirmation" id="confirmPassword" required>
                 <button type="submit">Sign Up</button>
             </form>
         </div>
+
         <div class="form-container sign-in">
 
             <form action="{{ route('login.post') }}" method="POST">
                 @if(Session::has('success'))
-                        <div class="alert alert-success" role="alert">
-                            {{ Session::get('success') }}
-                        </div>
-                    @endif
+                <div class="alert alert-success" role="alert">
+                    {{ Session::get('success') }}
+                </div>
+                @endif
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                @if (Session::has('error'))
+                    <div class="alert alert-danger">
+                        {{ Session::get('error') }}
+                    </div>
+                @endif
                 @csrf
                 <h1>Sign In</h1>
                 <span>or use your email for login</span>
                 <input type="email" placeholder="Email"  name="email" class="form-control" required>
                 <input type="password" placeholder="Password" name="password" class="form-control" required>
                 <button name="submit" type="submit" class="btn btn-primary">Sign In</button>
+
             </form>
         </div>
         <div class="toggle-container">
