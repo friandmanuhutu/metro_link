@@ -43,18 +43,21 @@
             <div class="gallery-col">
                 <img src="/assets/bima2.jpg">
                 <div class="layer">
+                    <h2>Dukuh Kupang</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium praesentium aliquam error earum delectus, voluptas aspernatur voluptatum odit laboriosam, totam officia illum quia vitae expedita a. Dolores, sapiente cumque. Odio!</p>
                 </div>
             </div>
             <div class="gallery-col">
                 <img src="/assets/bima3.jpg">
                 <div class="layer">
+                    <h2>Gayungan</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus fuga accusantium vitae cumque, quasi aut culpa et alias aspernatur esse eaque tempore corporis distinctio, ad fugit iure, perferendis dicta! Dolorem.</p>
                 </div>
             </div>
             <div class="gallery-col">
                 <img src="/assets/bima4.jpg">
                 <div class="layer">
+                    <h2>Wonocolo</h2>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, corporis. In consequuntur molestiae aliquam est pariatur labore exercitationem! Porro nihil, pariatur consequatur voluptates laboriosam quisquam ratione quo veniam quae quasi.</p>
                 </div>
             </div>
@@ -63,18 +66,21 @@
             <div class="gallery-col">
                 <img src="/assets/bima5.jpg">
                 <div class="layer">
+                    <h2>Rungkut Industri</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sint adipisci, iure ipsum nam quas fugit voluptate blanditiis minima fugiat iusto dolor nulla dignissimos, optio voluptatibus! Ipsa hic at eaque?</p>
                 </div>
             </div>
             <div class="gallery-col">
                 <img src="/assets/bima6.jpg">
                 <div class="layer">
+                    <h2>Ketintang</h2>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo fuga amet inventore, illum autem ipsa placeat, non tempore tempora quam distinctio qui libero voluptatibus omnis eveniet ratione error, facilis dolore?</p>
                 </div>
             </div>
             <div class="gallery-col">
                 <img src="/assets/bima7.jpg">
                 <div class="layer">
+                    <h2>Jl. Tunjungan</h2>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil repellendus sint deserunt, cupiditate culpa nesciunt cumque pariatur labore rerum error magnam quos laudantium aperiam vitae? Quae quo asperiores eligendi deleniti?</p>
                 </div>
             </div>
@@ -83,18 +89,21 @@
             <div class="gallery-col">
                 <img src="/assets/bima8.jpg">
                 <div class="layer">
+                    <h2>SWK Karah</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sint adipisci, iure ipsum nam quas fugit voluptate blanditiis minima fugiat iusto dolor nulla dignissimos, optio voluptatibus! Ipsa hic at eaque?</p>
                 </div>
             </div>
             <div class="gallery-col">
                 <img src="/assets/bima9.jpg">
                 <div class="layer">
+                    <h2>Wonokromo</h2>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo fuga amet inventore, illum autem ipsa placeat, non tempore tempora quam distinctio qui libero voluptatibus omnis eveniet ratione error, facilis dolore?</p>
                 </div>
             </div>
             <div class="gallery-col">
                 <img src="/assets/bima10.jpg">
                 <div class="layer">
+                    <h2>Nginden</h2>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil repellendus sint deserunt, cupiditate culpa nesciunt cumque pariatur labore rerum error magnam quos laudantium aperiam vitae? Quae quo asperiores eligendi deleniti?</p>
                 </div>
             </div>
@@ -103,18 +112,21 @@
             <div class="gallery-col">
                 <img src="/assets/bima1.jpg">
                 <div class="layer">
+                    <h2>Gubeng</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sint adipisci, iure ipsum nam quas fugit voluptate blanditiis minima fugiat iusto dolor nulla dignissimos, optio voluptatibus! Ipsa hic at eaque?</p>
                 </div>
             </div>
             <div class="gallery-col">
                 <img src="/assets/bima11.jpg">
                 <div class="layer">
+                    <h2>Pakuwon City</h2>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo fuga amet inventore, illum autem ipsa placeat, non tempore tempora quam distinctio qui libero voluptatibus omnis eveniet ratione error, facilis dolore?</p>
                 </div>
             </div>
             <div class="gallery-col">
                 <img src="/assets/bima12.jpg">
                 <div class="layer">
+                    <h2>Waru</h2>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil repellendus sint deserunt, cupiditate culpa nesciunt cumque pariatur labore rerum error magnam quos laudantium aperiam vitae? Quae quo asperiores eligendi deleniti?</p>
                 </div>
             </div>
