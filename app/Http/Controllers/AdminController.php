@@ -221,7 +221,8 @@ class AdminController extends Controller
             $agendaKota->kategori = $request->kategori;
             $agendaKota->deskripsi_event = $request->deskripsi_event;
             $agendaKota->tanggal_pelaksanaan = $request->tanggal_pelaksanaan;
-            $agendaKota->status = 'pending';  // Set default status to pending
+            $agendaKota->status = 'pending'; // Set default status to pending
+            $agendaKota->created_at = NULL;
             $agendaKota->save();
 
             return redirect()->back()->with('success', 'Event berhasil diajukan!');
