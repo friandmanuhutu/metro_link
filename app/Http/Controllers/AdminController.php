@@ -225,7 +225,7 @@ class AdminController extends Controller
             $agendaKota->created_at = NULL;
             $agendaKota->save();
 
-            return redirect()->back()->with('success', 'Event berhasil diajukan!');
+            return redirect()->back()->with('success', 'Event berhasil diajukan! Event akan segera diproses oleh admin 3x24 jam');
         } catch (\Illuminate\Database\QueryException $e) {
             return redirect()->back()->with('error', 'An error occurred while submitting the event');
         }

@@ -11,62 +11,62 @@
 <body>
     <div class="container pt-4 bg-white">
         <div class="row">
-          <div class="col-md-8 col-xl-6">
-            <h1>Ajukan Kendala</h1>
-            <hr>
+            <div class="col-md-8 col-xl-6">
+                <h1>Ajukan Kendala</h1>
+                <hr>
 
-            <form action="/metrolink/agenda_kota/store" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="mb-3">
-                    <label class="form-label" for="nama_peneyelenggara">Username</label>
-                    <input type="text" id="nama_peneyelenggara" name="nama_penyelenggara" placeholder="Masukkan Username" value="{{ old('nama_penyelenggara') }}"
-                        class="form-control @error('nama_penyelenggara') is-invalid @enderror">
-                    @error('nama_penyelenggara')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div>
+                <form action="/metrolink/agenda_kota/store" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="mb-3">
+                        <label class="form-label" for="telepon">Nomor Telepon Penanggung Jawab</label>
+                        <input type="text" id="telepon" name="telepon" placeholder="Masukkan Nomor Telepon" value="{{ old('telepon') }}"
+                            class="form-control @error('telepon') is-invalid @enderror">
+                        @error('telepon')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label" for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Masukkan Email" value="{{ old('email') }}"
-                        class="form-control @error('email') is-invalid @enderror">
-                    @error('email')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="judul_pengaduan">Judul Pengaduan</label>
+                        <input type="text" id="judul_pengaduan" name="judul_pengaduan" placeholder="Masukkan Judul Pengaduan" value="{{ old('judul_pengaduan') }}"
+                            class="form-control @error('judul_pengaduan') is-invalid @enderror">
+                        @error('judul_pengaduan')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label" for="nomor_telepon">Nomor Telepon</label>
-                    <input type="text" id="nomor_telepon" name="nomor_telepon" placeholder="Masukkan Nomor Telepon" value="{{ old('nomor_telepon') }}"
-                        class="form-control @error('nomor_telepon') is-invalid @enderror">
-                    @error('nomor_telepon')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="foto">Upload Gambar</label>
+                        <input type="file" id="foto" name="foto" class="form-control @error('foto') is-invalid @enderror">
+                        @error('foto')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label" for="gambar">Upload Gambar</label>
-                    <input type="file" id="gambar" name="gambar" class="form-control @error('gambar') is-invalid @enderror">
-                    @error('gambar')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="deskripsi_pengaduan">Deskripsi Pengaduan</label>
+                        <textarea class="form-control" id="deskripsi_pengaduan" rows="3" placeholder="Masukkan Deskripsi Pengaduan" name="deskripsi_pengaduan">{{ old('deskripsi_pengaduan') }}</textarea>
+                        @error('deskripsi_pengaduan')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label" for="deskripsi">Deskripsi Foto</label>
-                    <textarea class="form-control" id="deskripsi" rows="3" placeholder="Masukkan Deskripsi Foto" name="deskripsi">{{ old('deskripsi') }}</textarea>
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="alamat">Alamat</label>
+                        <textarea class="form-control" id="alamat" rows="3" placeholder="Masukkan Alamat" name="alamat">{{ old('alamat') }}</textarea>
+                        @error('alamat')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-                <div class="mb-3">
-                    <input type="submit" id="submit-agenda" name="submit-agenda" class="btn btn-primary">
-                </div>
-            </form>
+                    <div class="mb-3">
+                        <input type="submit" id="submit-agenda" name="submit-agenda" class="btn btn-primary">
+                    </div>
+                </form>
 
-
-
-          </div>
+            </div>
         </div>
-      </div>
+    </div>
 </body>
 
 </html>
