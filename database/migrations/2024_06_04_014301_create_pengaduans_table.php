@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('agenda_kotas', function (Blueprint $table) {
-            $table->id(); // Primary key
-            $table->string('Nama_Penyelenggara');
-            $table->string('Nama_Event');
-            $table->string('kategori');
-            $table->text('Deskripsi_Event');
-            $table->date('Tanggal_Pelaksanaan');
+        Schema::create('pengaduans', function (Blueprint $table) {
+            $table->id();
+            $table->string('username');
+            $table->string('email');
+            $table->string('telepon')->nullable();
+            $table->text('judul_pengaduan');
+            $table->string('foto')->nullable();
+            $table->text('deskripsi_pengaduan');
+            $table->string('alamat')->nullable();
             $table->enum('status', ['acc', 'pending'])->default('pending');
             $table->timestamps();
         });
@@ -32,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agenda_kotas');
+        Schema::dropIfExists('pengaduans');
     }
 };

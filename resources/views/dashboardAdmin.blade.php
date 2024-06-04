@@ -43,7 +43,7 @@
                 </li>
 
                 <li>
-                    <a href="">
+                    <a href="/admin/pengaduan">
                         <span class="icon">
                             <ion-icon name="chatbubble-outline"></ion-icon>
                         </span>
@@ -96,17 +96,6 @@
 
                     <div class="iconBx">
                         <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">{{ $totalPengajuanAgenda }}</div>
-                        <div class="cardName">Total Pengajuan Agenda</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="cart-outline"></ion-icon>
                     </div>
                 </div>
 

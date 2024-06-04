@@ -43,7 +43,7 @@
                 </li>
 
                 <li>
-                    <a href="">
+                    <a href="/admin/pengaduan">
                         <span class="icon">
                             <ion-icon name="chatbubble-outline"></ion-icon>
                         </span>
@@ -86,7 +86,7 @@
                 </div>
             </div>
 
-            <div class="details">
+            {{-- <div class="details">
                 <div class="recentOrders">
 
                     <div class="cardHeader">
@@ -120,7 +120,7 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </div> --}}
 
     </div>
 

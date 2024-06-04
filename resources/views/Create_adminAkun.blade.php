@@ -64,7 +64,7 @@
                 </li>
 
                 <li>
-                    <a href="">
+                    <a href="/admin/pengaduan">
                         <span class="icon">
                             <ion-icon name="chatbubble-outline"></ion-icon>
                         </span>

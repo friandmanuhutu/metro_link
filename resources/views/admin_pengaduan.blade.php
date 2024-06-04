@@ -43,7 +43,7 @@
                 </li>
 
                 <li>
-                    <a href="/admin/pengaduan">
+                    <a href="">
                         <span class="icon">
                             <ion-icon name="chatbubble-outline"></ion-icon>
                         </span>
@@ -52,7 +52,7 @@
                 </li>
 
                 <li>
-                    <a href="">
+                    <a href="/admin/akun_admin">
                         <span class="icon">
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </span>
@@ -79,20 +79,14 @@
                 </div>
 
                 <div class="search">
-                    <form action="/admin/akun_admin" method="GET">
-                        <label>
-                            <input type="text" name="search" placeholder="Search here" value="{{ request('search') }}">
-                            <ion-icon name="search-outline"></ion-icon>
-                            <button type="submit" style="display: none"></button>
-                        </label>
-                    </form>
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
                 </div>
             </div>
 
             <div class="details">
-                <a href="/admin/akun_admin/create" class="btn-accadmin">
-                    create acc
-                </a>
                 <div class="recentOrders">
 
                     <div class="cardHeader">
@@ -103,30 +97,33 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Username</th>
+                                <th>Nama Pengadu</th>
                                 <th>Email</th>
-                                <th>Tipe User</th>
+                                <th>Telepon</th>
+                                <th>Judul Pengaduan</th>
+                                <th>Deskripsi Pengaduan</th>
+                                <th>Alamat</th>
+                                <th>Foto</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $user)
+                            @foreach($pengaduanData as $pengaduan)
                             <tr>
-                                <td>{{ $user->id }}</td>
-                                <td>{{ $user->username }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->tipe_user }}</td>
-                                <td>
-                                    <a href="/admin/akun_admin/edit/{{ $user->id }}" class="btn-edit">Edit</a>
-                                    <form action="/admin/akun_admin/delete/{{ $user->id }}" method="POST" style="display:inline;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn-delete" onclick="return confirm('Are you sure you want to delete this user?');">Delete</button>
-                                    </form>
-                                </td>
+                                <td>{{ $pengaduan->id }}</td>
+                                <td>{{ $pengaduan->username }}</td>
+                                <td>{{ $pengaduan->email }}</td>
+                                <td>{{ $pengaduan->telepon }}</td>
+                                <td>{{ $pengaduan->judul_pengaduan }}</td>
+                                <td>{{ $pengaduan->deskripsi_pengaduan }}</td>
+                                <td>{{ $pengaduan->alamat }}</td>
+                                <td>{{ $pengaduan->foto }}</td> <!-- Ini hanya menampilkan nama file, pastikan Anda menangani penyimpanan dan penampilan gambar secara terpisah -->
+                                <td>{{ $pengaduan->status }}</td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
+
                 </div>
             </div>
 

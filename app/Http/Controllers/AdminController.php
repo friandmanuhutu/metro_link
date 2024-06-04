@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AccAgendaKota;
+
 use App\Models\agenda_kota;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -25,12 +25,12 @@ class AdminController extends Controller
     public function count()
     {
 
-        $totalPengajuanAgenda = AccAgendaKota::count();
+
         $totalAgendaTersedia =  agenda_kota::count();
         $totalAdminAkun = User::where('tipe_user', 'admin')->count();
         $totalUserAkun = User::where('tipe_user', 'user')->count();
 
-        return view('dashboardAdmin', compact( 'totalPengajuanAgenda', 'totalAgendaTersedia', 'totalAdminAkun','totalUserAkun' ));
+        return view('dashboardAdmin', compact( 'totalAgendaTersedia', 'totalAdminAkun','totalUserAkun' ));
     }
 
     // CRUD AKUN DI ADMIN =================================================================================================================
@@ -131,7 +131,7 @@ class AdminController extends Controller
 
     // ============================================================================================================================================
 
-    function AddAgendakota(){
+    function AdminAgendakota(){
         return view("admin_agendaKota");
     }
 
@@ -151,14 +151,9 @@ class AdminController extends Controller
         return view("galery");
     }
 
-    public function tampilkan(){
-        $agendaKotas = agenda_kota::all();
+    public function tampilkanAgenda(){
+        $agendaKotas = agenda_kota::where('status', 'acc')->get();
         return view('agenda_kota', compact('agendaKotas'));
-    }
-
-    public function AccAgendaKota(){
-        $AccagendaKotas = AccAgendaKota::all();
-        return view('admin_agendakota', compact('AccagendaKotas'));
     }
 
     public function createAgenda(){
