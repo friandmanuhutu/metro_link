@@ -9,11 +9,14 @@ class agenda_kota extends Model
 {
     use HasFactory;
 
-    protected $table = 'agenda_kotas';
+    protected $table = 'agenda_kotas';  // Pastikan tabel ini benar
 
     protected $fillable = [
-        'Nama Penyelenggara',
-        'Deskripsi Event',
-        'Tanggal Pelaksanaan',
+        'nama_penyelenggara',
+        'nama_event',
+        'kategori',
+        'deskripsi_event',
+        'tanggal_pelaksanaan',
+        'status',
     ];
 }

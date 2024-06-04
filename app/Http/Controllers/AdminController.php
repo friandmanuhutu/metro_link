@@ -183,9 +183,53 @@ class AdminController extends Controller
         return view('create_agendaKota');
     }
 
-    public function storeAgenda(){
-        return view('create_agendaKota');
+    public function storeAgenda(Request $request)
+    {
+        // Custom validation logic
+        $validator = Validator::make($request->all(), [
+            'nama_penyelenggara' => 'required|string|max:255',
+            'nama_event' => 'required|string|max:255',
+            'kategori' => 'required|string|max:255',
+            'deskripsi_event' => 'required|string',
+            'tanggal_pelaksanaan' => 'required|date',
+        ]);
+
+        // Check if validation fails
+        if ($validator->fails()) {
+            $messages = $validator->messages();
+            if ($messages->has('nama_penyelenggara')) {
+                $error = 'Nama penyelenggara harus diisi.';
+            } elseif ($messages->has('nama_event')) {
+                $error = 'Nama event harus diisi.';
+            } elseif ($messages->has('kategori')) {
+                $error = 'Kategori harus diisi.';
+            } elseif ($messages->has('deskripsi_event')) {
+                $error = 'Deskripsi event harus diisi.';
+            } elseif ($messages->has('tanggal_pelaksanaan')) {
+                $error = 'Tanggal pelaksanaan harus diisi.';
+            } else {
+                $error = 'Periksa kembali data anda';
+            }
+            return redirect()->back()->withErrors($validator)->withInput()->with('error', $error);
+        }
+
+        try {
+            // Create new agenda kota
+            $agendaKota = new agenda_kota();
+            $agendaKota->nama_penyelenggara = $request->nama_penyelenggara;
+            $agendaKota->nama_event = $request->nama_event;
+            $agendaKota->kategori = $request->kategori;
+            $agendaKota->deskripsi_event = $request->deskripsi_event;
+            $agendaKota->tanggal_pelaksanaan = $request->tanggal_pelaksanaan;
+            $agendaKota->status = 'pending';  // Set default status to pending
+            $agendaKota->save();
+
+            return redirect()->back()->with('success', 'Event berhasil diajukan!');
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->back()->with('error', 'An error occurred while submitting the event');
+        }
     }
+
 
     public function formPengaduan(){
         return view('form_pengaduan');

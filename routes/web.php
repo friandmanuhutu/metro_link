@@ -52,6 +52,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/metrolink/galery', [AdminController::class, 'galery']);
     Route::get('/metrolink/agenda_kota', [AdminController::class, 'tampilkanAgenda']);
     Route::get('/metrolink/agenda_kota/create', [AdminController::class, 'createAgenda']);
+    Route::post('/metrolink/agenda_kota/store', [AdminController::class, 'storeAgenda'])->name('agenda_kota.storeAgenda');
     Route::get('/logout', [SesiController::class, 'logout']);
 });
 

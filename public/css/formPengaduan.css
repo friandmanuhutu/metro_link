@@ -25,6 +25,7 @@ h1 {
 
 hr {
     margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 .form-label {
@@ -37,7 +38,7 @@ hr {
     width: 100%;
     padding: 10px;
     margin-top: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     border: 1px solid #ced4da;
     border-radius: 5px;
 }
@@ -59,6 +60,18 @@ textarea.form-control {
 .text-danger {
     color: #e3342f;
     font-size: 0.875rem;
+    margin-bottom: 20px;
+}
+
+.alert-success{
+    display: flex;
+    justify-content: space-around;
+    padding: 12px;
+    margin-bottom: 19px;
+    background-color: #2fa33d;
+    color: aliceblue;
+    font-size: smaller;
+    border-radius: 11px;
 }
 
 #submit-agenda {
