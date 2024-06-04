@@ -10,6 +10,7 @@ use Symfony\Component\VarDumper\Caster\AmqpCaster;
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/', [SesiController::class, 'index'])->name('login');
+    // Login Register
     Route::post('/login', [SesiController::class, 'login'])->name('login.post');
     Route::post('/register', [SesiController::class, 'register'])->name('register.post');
 });
@@ -25,6 +26,8 @@ Route::middleware(['auth'])->group(function () {
 
     //  Admin Agenda Kota
     Route::get('/admin/agenda_kota', [AdminController::class, 'AdminAgendakota']);
+    Route::put('/admin/agenda_kota/{id}', [AdminController::class, 'updateStatus'])->name('admin.agenda_kota.update');
+    Route::get('/admin/agenda_kota', [AdminController::class, 'search_agendakota'])->name('admin.agenda_kota.search');
 
     // Admin Akun admin CRUD
     Route::get('/admin/akun_admin', [AdminController::class, 'akun_admin']);
@@ -38,6 +41,7 @@ Route::middleware(['auth'])->group(function () {
     // Admin Pengaduan
     Route::get('/admin/pengaduan', [PengaduanController::class, 'create']);
     Route::post('/admin/pengaduan', [PengaduanController::class, 'store']);
+    // Route::get('/admin/pengaduan', [AdminController::class, 'search_pengaduan']);
 
     // Tampilan user
     Route::get('/metrolink', [AdminController::class, 'user'])->middleware('UserAkses:user');

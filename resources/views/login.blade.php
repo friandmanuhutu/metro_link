@@ -46,7 +46,7 @@
 </head>
 <body>
 
-
+    {{-- Register --}}
     <div class="error-box" id="error-box"></div>
     <div class="container" id="container">
         <div class="form-container sign-up">
@@ -93,6 +93,9 @@
 
             </form>
         </div>
+
+
+        {{-- Log in --}}
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">

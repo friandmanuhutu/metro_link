@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('foto')->nullable();
             $table->text('deskripsi_pengaduan');
             $table->string('alamat')->nullable();
-            $table->enum('status', ['acc', 'pending'])->default('pending');
             $table->timestamps();
         });
     }

@@ -79,49 +79,63 @@
                 </div>
 
                 <div class="search">
-                    <label>
-                        <input type="text" placeholder="Search here">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </label>
+                    <form action="{{ route('admin.agenda_kota.search') }}" method="GET">
+                        <label>
+                            <input type="text" name="search" placeholder="Search here">
+                            <ion-icon name="search-outline"></ion-icon>
+                            <button type="submit" style="display: none"></button>
+                        </label>
+                    </form>
                 </div>
             </div>
 
-            {{-- <div class="details">
+            <div class="details">
                 <div class="recentOrders">
-
                     <div class="cardHeader">
-                        <h2>Menunggu Persetujuan</h2>
+                        <h2>Data Agenda Kota</h2>
                     </div>
-
                     <table>
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Username</th>
                                 <th>Nama Penyelenggara</th>
                                 <th>Nama Event</th>
                                 <th>Kategori</th>
                                 <th>Deskripsi Event</th>
                                 <th>Tanggal Pelaksanaan</th>
+                                <th>Status</th>
+                                {{-- <th>Aksi</th> --}}
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($AccagendaKotas as $AccagendaKota)
+                            @foreach($agendaKotas as $agendaKota)
                             <tr>
                                 <td>{{ $agendaKota->id }}</td>
-                                <td>{{ $agendaKota->username }}</td>
                                 <td>{{ $agendaKota->Nama_Penyelenggara }}</td>
                                 <td>{{ $agendaKota->Nama_Event }}</td>
-                                <td>{{ $agendaKota->kategori }}</td> <!-- Menampilkan kategori -->
+                                <td>{{ $agendaKota->kategori }}</td>
                                 <td>{{ $agendaKota->Deskripsi_Event }}</td>
                                 <td>{{ $agendaKota->Tanggal_Pelaksanaan }}</td>
+                                <td>
+                                    <form action="{{ route('admin.agenda_kota.update', $agendaKota->id) }}" method="POST">
+                                        @csrf
+                                        @method('PUT')
+                                        <select name="status" onchange="this.form.submit()" style="height: 40px; width: 75px;" class="{{ $agendaKota->status == 'pending' ? 'status-pending' : 'status-acc' }}">
+                                            <option value="pending" {{ $agendaKota->status == 'pending' ? 'selected' : '' }}>Pending</option>
+                                            <option value="acc" {{ $agendaKota->status == 'acc' ? 'selected' : '' }}>Acc</option>
+                                        </select>
+                                    </form>
+                                </td>
+                                {{-- <td>
+                                    <button type="submit" form="statusForm-{{ $agendaKota->id }}">Update</button>
+                                </td> --}}
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
-            </div> --}}
-
+            </div>
+        </div>
     </div>
 
     <!-- =========== Scripts =========  -->

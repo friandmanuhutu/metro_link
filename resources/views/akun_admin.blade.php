@@ -96,7 +96,7 @@
                 <div class="recentOrders">
 
                     <div class="cardHeader">
-                        <h2>Menunggu Persetujuan</h2>
+                        <h2>Data Akun</h2>
                     </div>
 
                     <table>
@@ -106,6 +106,7 @@
                                 <th>Username</th>
                                 <th>Email</th>
                                 <th>Tipe User</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -24,8 +24,6 @@ class AdminController extends Controller
 
     public function count()
     {
-
-
         $totalAgendaTersedia =  agenda_kota::count();
         $totalAdminAkun = User::where('tipe_user', 'admin')->count();
         $totalUserAkun = User::where('tipe_user', 'user')->count();
@@ -45,7 +43,7 @@ class AdminController extends Controller
     }
 
     public function Admin_storeAkun(Request $request)
-{
+    {
     // Custom validation logic
     $validator = Validator::make($request->all(), [
         'username' => 'required|string|max:255|unique:users',
@@ -80,7 +78,7 @@ class AdminController extends Controller
     }
 }
 
-
+    // FITUR SEARCH ADMIN =================================================================================================================================
     public function search_adminAkun(Request $request)
     {
         $search = $request->input('search');
@@ -92,6 +90,21 @@ class AdminController extends Controller
         })->get();
 
         return view('akun_admin', compact('users'));
+    }
+
+    public function search_agendakota(Request $request)
+    {
+        $search = $request->input('search');
+
+        $agendaKotas = agenda_kota::when($search, function ($query, $search) {
+        return $query->where('Nama_Penyelenggara', 'like', "%{$search}%")
+                     ->orWhere('Nama_Event', 'like', "%{$search}%")
+                     ->orWhere('kategori', 'like', "%{$search}%")
+                     ->orWhere('Deskripsi_Event', 'like', "%{$search}%")
+                     ->orWhere('Tanggal_Pelaksanaan', 'like', "%{$search}%");
+        })->get();
+
+        return view('admin_agendaKota', compact('agendaKotas'));
     }
 
 
@@ -132,7 +145,17 @@ class AdminController extends Controller
     // ============================================================================================================================================
 
     function AdminAgendakota(){
-        return view("admin_agendaKota");
+        $agendaKotas = agenda_kota::all();
+        return view('admin_agendaKota', compact('agendaKotas'));
+    }
+
+    public function updateStatus(Request $request, $id)
+    {
+        $agendaKota = agenda_kota::findOrFail($id);
+        $agendaKota->status = $request->status;
+        $agendaKota->save();
+
+        return redirect()->back()->with('success', 'Status berhasil diupdate');
     }
 
     function user(){

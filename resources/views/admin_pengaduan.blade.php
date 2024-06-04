@@ -90,7 +90,7 @@
                 <div class="recentOrders">
 
                     <div class="cardHeader">
-                        <h2>Menunggu Persetujuan</h2>
+                        <h2>Data Pengaduan Masyarakat</h2>
                     </div>
 
                     <table>
@@ -104,7 +104,6 @@
                                 <th>Deskripsi Pengaduan</th>
                                 <th>Alamat</th>
                                 <th>Foto</th>
-                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -117,8 +116,7 @@
                                 <td>{{ $pengaduan->judul_pengaduan }}</td>
                                 <td>{{ $pengaduan->deskripsi_pengaduan }}</td>
                                 <td>{{ $pengaduan->alamat }}</td>
-                                <td>{{ $pengaduan->foto }}</td> <!-- Ini hanya menampilkan nama file, pastikan Anda menangani penyimpanan dan penampilan gambar secara terpisah -->
-                                <td>{{ $pengaduan->status }}</td>
+                                <td>{{ $pengaduan->foto }}</td>
                             </tr>
                             @endforeach
                         </tbody>

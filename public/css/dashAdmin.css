@@ -301,9 +301,17 @@ body {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  font-size: 13px;
+}
+.details table th{
+  background-color: #ff9e0d;
+  border: 1px solid #1e1e1e;
+  padding: 15px;
 }
 .details table thead td {
   font-weight: 600;
+  padding: 10px;
+  max-width: 10px;
 }
 .details .recentOrders table tr {
   color: var(--black1);
@@ -319,10 +327,11 @@ body {
 } */
 
 .details .recentOrders table tr td {
-  padding: 31px 0px 15px 0px;
+  padding: 31px 15px 15px 15px;
   text-align: center;
 }
 .details .recentOrders table tr td:last-child {
+  max-width: 100px;
   text-align: center;
 }
 .details .recentOrders table tr td:nth-child(2) {
@@ -426,7 +435,7 @@ body {
 /* Tombol Edit */
 .details .btn-edit{
   background-color: #287328;
-  padding: 10px 30px 10px 30px;
+  padding: 12px 30px 13px 30px;
   color: azure;
   text-decoration: none;
   border-radius: 5px;
@@ -643,6 +652,21 @@ body {
 .form-editAcc.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Status acc dan pending pada tabel agenda kota */
+.status-pending {
+    border-radius: 7px;
+    background-color: red;
+    font-weight: bold;
+    color: white;
+}
+
+.status-acc {
+    border-radius: 7px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
 }
 
 
