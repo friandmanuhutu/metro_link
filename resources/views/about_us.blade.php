@@ -241,7 +241,7 @@
     <div class="cta-content">
         <div class="cta">
             <h1>ADA KELUHAN? SAMPAIKAN KELUHAN ANDA DISINI</h1>
-            <a href="service.html" class="btn">Service</a>
+            <a href="/metrolink/service" class="btn">Service</a>
 
         </div>
     </div>

@@ -88,6 +88,7 @@
         </div>
     </div>
     <a href="galery.html" class="see-more">See More</a> --}}
+    
 
     <div class="scroll-up">
         <a href="#"><i class="ri-arrow-up-s-fill"></i></a>

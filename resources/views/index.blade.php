@@ -177,7 +177,7 @@
     <div class="cta-content">
         <div class="cta">
             <h1>Mari bersama bangun kota lebih nyaman dan berkelanjutan!</h1>
-            <a href="service.html" class="btn">Aduan Kendala</a>
+            <a href="/metrolink/service/ajukan_kendala" class="btn">Aduan Kendala</a>
 
         </div>
     </div>

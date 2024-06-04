@@ -13,6 +13,7 @@
         <div class="row">
             <div class="col-md-8 col-xl-6">
                 <h1>Ajukan Kendala</h1>
+                <span><a href="/metrolink/service" style="padding: 10px 22px 10px 22px;text-decoration: none;color: aliceblue;background-color: #1e1e1e;border-radius: 7px;">Back</a></span>
                 <hr>
 
                 <form action="/metrolink/agenda_kota/store" method="POST" enctype="multipart/form-data">

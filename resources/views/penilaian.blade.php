@@ -14,6 +14,7 @@
         <div class="post">
             <div class="text">Terimakasih atas masukannya!</div>
             <div class="edit">Edit</div>
+            {{-- <span><a href="/metrolink/service">BACK TO SERVICE</a></span> --}}
         </div>
 
         <div class="star-widget">
@@ -37,6 +38,7 @@
                 </div>
             </form>
         </div>
+        <span><a href="/metrolink/service">BACK TO SERVICE</a></span>
     </div>
     <script>
         const btn = document.querySelector("button");
