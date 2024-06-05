@@ -23,7 +23,7 @@
             <li><a href="/metrolink/agenda_kota">Agenda Kota</a></li>
             <li><a href="/metrolink/about_us">About Us</a></li>
             <li><a href="/metrolink/galery">Gallery</a></li>
-            <li><a href="/logout" style="background-color: #4d4d4d;">Logout</a></li>
+            <li><a href="/logout" style="background-color: #a60000;border-radius: 40px;">Logout</a></li>
         </ul>
 
         <div class="bx bx-menu" id="menu-icon"></div>

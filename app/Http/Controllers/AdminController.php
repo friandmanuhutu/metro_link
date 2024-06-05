@@ -239,7 +239,4 @@ class AdminController extends Controller
     public function formPenilaian(){
         return view('penilaian');
     }
-
-
-
 }
