@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MetroLink</title>
     <link rel="stylesheet" href="/css/service.css">
+    <link rel="icon" href="/assets/logo-01.png" type="image/x-icon">
 
     <!-- icon -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -46,7 +47,7 @@
             <h3>INFORMASI KOTA</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iusto, voluptate quae expedita optio ex Illum</p><br>
 
-            <a href="/metrolink" class="btn-service1">See more</a>
+            <a href="/metrolink/#informasi" class="btn-service1">See more</a>
         </div>
         <div class="box-service">
             <img src="/assets/service-4.jpg" alt=""><br>

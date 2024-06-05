@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,  tial-scale=1.0">
     <title>MetroLink</title>
     <link rel="stylesheet" href="/css/style.css">
-
+    <link rel="icon" href="/assets/logo-01.png" type="image/x-icon">
     <!-- icon -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
@@ -31,11 +31,20 @@
         <div class="content">
             <h1>MetroLink Kota Masa Depan!</h1>
             <p>Kota nyaman hidup aman!</p>
-            <form>
-                <input type="text" placeholder="Nama Kota">
+            <div class="dropdown">
+                <form id="cityForm">
+                <input type="text" id="cityInput" placeholder="Cari Service Kami">
                 <button type="submit" class="btn">Search</button>
-            </form>
+                </form>
+            <div class="dropdown-content" id="cityDropdown">
+                <a href="/metrolink/#informasi">Informasi Kota</a>
+                <a href="/metrolink/service/ajukan_kendala">Pengaduan Masalah</a>
+                <a href="/metrolink/agenda_kota">Agenda Kota</a>
+                <a href="/metrolink/service/berikan_penilaian">Rating</a>
+                <!-- Add more cities here -->
+            </div>
         </div>
+    </div>
     </div>
     <div class="about">
         <div class="left">
@@ -46,8 +55,9 @@
             <p>MetroLink adalah aplikasi berbasis WebApps yang dirancang untuk membantu masyarakat, pemerintah kota, dan stakeholder terkait dalam mengelola kota dengan cara yang aman, tangguh, dan berkelanjutan.</p>
             <button class="btn-yellow"><a href="about_us.html">About Us</a></button>
         </div>
+        
     </div>
-    <div class="slideshow-container">
+    <div id="informasi" class="slideshow-container">
 
         <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
@@ -95,21 +105,21 @@
         <h2>Explore Our Experience</h2>
         <div class="row">
             <div class="gallery-col">
-                <img src="assets/surabaya.jpg">
+                <img src="/assets/surabaya.jpg">
                 <div class="layer">
-                    <h4>Surabaya</h4>
+                    <h4>Tambaksari</h4>
                 </div>
             </div>
             <div class="gallery-col">
-                <img src="assets/malang.jpg">
+                <img src="/assets/malang.jpg">
                 <div class="layer">
-                    <h4>Malang</h4>
+                    <h4>Wonokromo</h4>
                 </div>
             </div>
             <div class="gallery-col">
-                <img src="assets/jakarta.jpg">
+                <img src="/assets/jakarta.jpg">
                 <div class="layer">
-                    <h4>Jakarta</h4>
+                    <h4>Wiyung</h4>
                 </div>
             </div>
         </div>

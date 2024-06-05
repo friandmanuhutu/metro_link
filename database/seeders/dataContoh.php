@@ -28,6 +28,12 @@ class dataContoh extends Seeder
                 'tipe_user'=>'user',
                 'password'=> bcrypt('7654321')
             ],
+            [
+                'name'=>'Mas Hazli', 
+                'email'=> 'mashazli@gmail.com',
+                'tipe_user'=>'user',
+                'password'=> bcrypt('12345678')
+            ],
         ] ;
 
         foreach ($userData as $key => $val) {

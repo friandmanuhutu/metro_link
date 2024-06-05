@@ -184,6 +184,59 @@ nav .fa{
     display: none;
 }
 
+/*Dropdown*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    width: 100%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd; /* Ubah warna latar belakang saat dihover */
+    color: #000; /* Ubah warna teks saat dihover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    padding: 8px 16px;
+    background-color: #ff9e0d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #333;
+}
+
+
 /* About */
 .about {
     display: flex;
@@ -449,6 +502,7 @@ Table
 }
 
 .cta h1 {
+    font-size: 24px;
     color: #fff;
     margin-bottom: 20px;
     padding: 0;

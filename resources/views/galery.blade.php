@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MetroLink</title>
     <link rel="stylesheet" href="/css/galery.css">
+    <link rel="icon" href="/assets/logo-01.png" type="image/x-icon">
 
     <!-- icon -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">

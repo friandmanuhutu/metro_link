@@ -64,6 +64,52 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// -------Dropdown-------
+document.addEventListener("DOMContentLoaded", function() {
+  var cityForm = document.getElementById("cityForm");
+  var cityInput = document.getElementById("cityInput");
+  var cityDropdown = document.getElementById("cityDropdown");
+  var cityOptions = cityDropdown.getElementsByTagName("a");
 
+  // Tambahkan event listener untuk menangani submit form
+  cityForm.addEventListener("submit", function(event){
+      event.preventDefault();
+      // Lakukan logika pencarian di sini
+      // Untuk demonstrasi, kita akan menampilkan nama kota yang dipilih
+      alert("Mencari: " + cityInput.value);
+  });
 
+  // Tambahkan event listener untuk menangani perubahan pada input kota
+  cityInput.addEventListener("input", function(event) {
+      var inputText = cityInput.value.toLowerCase();
+      for (var i = 0; i < cityOptions.length; i++) {
+          var optionText = cityOptions[i].textContent.toLowerCase();
+          if (optionText.includes(inputText)) {
+              cityOptions[i].style.display = "block";
+          } else {
+              cityOptions[i].style.display = "none";
+          }
+      }
+  });
 
+  // Tambahkan event listener untuk menangani klik pada dropdown
+  cityInput.addEventListener("click", function(event) {
+      cityDropdown.style.display = "block";
+  });
+
+  // Tambahkan event listener untuk menutup dropdown saat di luar dropdown diklik
+  document.addEventListener("click", function(event) {
+      if (!cityDropdown.contains(event.target) && event.target !== cityInput) {
+          cityDropdown.style.display = "none";
+      }
+  });
+
+  // Tambahkan event listener untuk menangani klik pada pilihan kota di dropdown
+  cityDropdown.addEventListener("click", function(event) {
+      if (event.target.tagName === "A") {
+          cityInput.value = event.target.textContent;
+          cityDropdown.style.display = "none";
+          cityForm.submit();
+      }
+  });
+});
