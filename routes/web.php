@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PengaduanController;
+use App\Http\Controllers\AjukanKendalaController;
 use App\Http\Controllers\agendakotaController;
 use App\Http\Controllers\SesiController;
 use App\Http\Middleware\UserAkses;
@@ -46,8 +47,15 @@ Route::middleware(['auth'])->group(function () {
     // Tampilan user
     Route::get('/metrolink', [AdminController::class, 'user'])->middleware('UserAkses:user');
     Route::get('/metrolink/about_us', [AdminController::class, 'about_us']);
+
+    // Service user
     Route::get('/metrolink/service', [AdminController::class, 'service']);
+
+    // Ajukan Kendala
     Route::get('/metrolink/service/ajukan_kendala', [AdminController::class, 'formPengaduan']);
+    Route::post('/metrolink/service/store', [AjukanKendalaController::class, 'store'])->name('pengaduan.store');
+    Route::get('/admin/pengaduan/{id}', [PengaduanController::class, 'show'])->name('pengaduan.show');
+
     Route::get('/metrolink/service/berikan_penilaian', [AdminController::class,'formPenilaian']);
     Route::get('/metrolink/galery', [AdminController::class, 'galery']);
     Route::get('/metrolink/agenda_kota', [AdminController::class, 'tampilkanAgenda']);

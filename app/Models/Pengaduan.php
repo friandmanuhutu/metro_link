@@ -14,8 +14,8 @@ class Pengaduan extends Model
         'email',
         'telepon',
         'judul_pengaduan',
+        'foto',
         'deskripsi_pengaduan',
         'alamat',
-        'foto'
     ];
 }

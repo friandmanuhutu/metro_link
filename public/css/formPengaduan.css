@@ -1,4 +1,10 @@
 /* Global Styles */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -40,7 +46,6 @@ hr {
 .form-label {
     font-weight: bold;
     color: #555;
-    padding-bottom: 10px;
 }
 
 .form-control {
@@ -49,6 +54,7 @@ hr {
     margin: 10px auto; /* Center form control within container */
     border: 1px solid #ced4da;
     border-radius: 5px;
+    height: calc(1.5em + 1rem + 2px);
 }
 
 .form-control:focus {

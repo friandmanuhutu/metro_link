@@ -8,6 +8,7 @@
     <title>Admin Dashboard</title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="/css/dashAdmin.css">
+    <link rel="stylesheet" href="/css/animations.css"> <!-- Add this line -->
 </head>
 
 <body>
@@ -23,7 +24,6 @@
                         <span class="title">{{ Auth::user()->username }}</span>
                     </a>
                 </li>
-
                 <li>
                     <a href="/admin">
                         <span class="icon">
@@ -32,7 +32,6 @@
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
-
                 <li>
                     <a href="/admin/agenda_kota">
                         <span class="icon">
@@ -41,7 +40,6 @@
                         <span class="title">Agenda Kota</span>
                     </a>
                 </li>
-
                 <li>
                     <a href="">
                         <span class="icon">
@@ -50,7 +48,6 @@
                         <span class="title">Pengaduan</span>
                     </a>
                 </li>
-
                 <li>
                     <a href="/admin/akun_admin">
                         <span class="icon">
@@ -59,7 +56,6 @@
                         <span class="title">Admin Akun</span>
                     </a>
                 </li>
-
                 <li>
                     <a href="/logout">
                         <span class="icon">
@@ -77,7 +73,6 @@
                 <div class="toggle">
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
-
                 <div class="search">
                     <label>
                         <input type="text" placeholder="Search here">
@@ -85,14 +80,11 @@
                     </label>
                 </div>
             </div>
-
             <div class="details">
                 <div class="recentOrders">
-
                     <div class="cardHeader">
                         <h2>Data Pengaduan Masyarakat</h2>
                     </div>
-
                     <table>
                         <thead>
                             <tr>
@@ -116,20 +108,32 @@
                                 <td>{{ $pengaduan->judul_pengaduan }}</td>
                                 <td>{{ $pengaduan->deskripsi_pengaduan }}</td>
                                 <td>{{ $pengaduan->alamat }}</td>
-                                <td>{{ $pengaduan->foto }}</td>
+                                <td><a href="{{ route('pengaduan.show', $pengaduan->id) }}" class="view-link">View</a></td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
-
                 </div>
             </div>
-
     </div>
 
     <!-- =========== Scripts =========  -->
     <script src="/js/admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const links = document.querySelectorAll('.view-link');
 
+        links.forEach(link => {
+            link.addEventListener('mouseover', function () {
+                this.style.color = 'darkblue';
+            });
+
+            link.addEventListener('mouseout', function () {
+                this.style.color = 'blue';
+            });
+        });
+    });
+    </script> <!-- Add this line -->
     <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

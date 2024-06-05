@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>Ajukan Kendala</title>
     <link rel="stylesheet" href="/css/formPengaduan.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -14,67 +14,74 @@
 
 <body>
     <div class="container pt-4 bg-white">
-                <h1>Form Pengaduan</h1>
-                <span><a href="/metrolink/service" style="padding: 10px 22px 10px 22px;text-decoration: none;color: aliceblue;background-color: #1e1e1e;border-radius: 7px;">Back</a></span>
-                <hr>
+        <h1 style="-webkit-text-stroke: medium;background-color: darkorange;border-radius: 40px;margin-bottom: 40px;padding: 10px;color: aliceblue;letter-spacing: 5px;box-shadow: 0 10px 8px 10px rgba(0, 0, 0, 0.1);}">AJUKAN KENDALA</h1>
+        <span><a href="/metrolink/service" style="padding: 7px 22px 10px 22px;text-decoration: none;color: aliceblue;background-color: #1e1e1e;border-radius: 7px;">Back</a></span>
+        <hr>
 
-                {{-- Tampilkan pesan sukses jika ada --}}
-                @if(session('success'))
-                    <script>
-                        $(document).ready(function() {
-                            $('#successModal').modal('show');
-                        });
-                    </script>
-                @endif
+        {{-- Tampilkan pesan sukses jika ada --}}
+        @if(session('success'))
+            <script>
+                $(document).ready(function() {
+                    $('#successModal').modal('show');
+                });
+            </script>
+        @endif
 
-                <form action="/metrolink/agenda_kota/store" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="mb-3">
-                        <label class="form-label" for="telepon">Nomor Telepon Penanggung Jawab</label>
-                        <input type="text" id="telepon" name="telepon" placeholder="Masukkan Nomor Telepon" value="{{ old('telepon') }}"
-                            class="form-control @error('telepon') is-invalid @enderror">
-                        @error('telepon')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
+        {{-- Tampilkan pesan error jika ada --}}
+        @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
 
-                    <div class="mb-3">
-                        <label class="form-label" for="judul_pengaduan">Judul Pengaduan</label>
-                        <input type="text" id="judul_pengaduan" name="judul_pengaduan" placeholder="Masukkan Judul Pengaduan" value="{{ old('judul_pengaduan') }}"
-                            class="form-control @error('judul_pengaduan') is-invalid @enderror">
-                        @error('judul_pengaduan')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
+        <form action="{{ route('pengaduan.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="mb-3">
+                <label class="form-label" for="telepon">Nomor Telepon Penanggung Jawab</label>
+                <input type="text" id="telepon" name="telepon" placeholder="Masukkan Nomor Telepon" value="{{ old('telepon') }}"
+                    class="form-control @error('telepon') is-invalid @enderror">
+                @error('telepon')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
 
-                    <div class="mb-3">
-                        <label class="form-label" for="foto">Upload Gambar</label>
-                        <input type="file" id="foto" name="foto" class="form-control @error('foto') is-invalid @enderror">
-                        @error('foto')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
+            <div class="mb-3">
+                <label class="form-label" for="judul_pengaduan">Judul Pengaduan</label>
+                <input type="text" id="judul_pengaduan" name="judul_pengaduan" placeholder="Masukkan Judul Pengaduan" value="{{ old('judul_pengaduan') }}"
+                    class="form-control @error('judul_pengaduan') is-invalid @enderror">
+                @error('judul_pengaduan')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
 
-                    <div class="mb-3">
-                        <label class="form-label" for="deskripsi_pengaduan">Deskripsi Pengaduan</label>
-                        <textarea class="form-control" id="deskripsi_pengaduan" rows="3" placeholder="Masukkan Deskripsi Pengaduan" name="deskripsi_pengaduan">{{ old('deskripsi_pengaduan') }}</textarea>
-                        @error('deskripsi_pengaduan')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
+            <div class="mb-3">
+                <label class="form-label" for="foto">Upload Gambar</label>
+                <input type="file" id="foto" name="foto" class="form-control @error('foto') is-invalid @enderror">
+                @error('foto')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
 
-                    <div class="mb-3">
-                        <label class="form-label" for="alamat">Alamat</label>
-                        <textarea class="form-control" id="alamat" rows="3" placeholder="Masukkan Alamat" name="alamat">{{ old('alamat') }}</textarea>
-                        @error('alamat')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
+            <div class="mb-3">
+                <label class="form-label" for="deskripsi_pengaduan">Deskripsi Pengaduan</label>
+                <textarea class="form-control" id="deskripsi_pengaduan" rows="3" placeholder="Masukkan Deskripsi Pengaduan" name="deskripsi_pengaduan">{{ old('deskripsi_pengaduan') }}</textarea>
+                @error('deskripsi_pengaduan')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
 
-                    <div class="mb-3">
-                        <input type="submit" id="submit-agenda" name="submit-agenda" class="btn btn-primary">
-                    </div>
-                </form>
+            <div class="mb-3">
+                <label class="form-label" for="alamat">Alamat</label>
+                <textarea class="form-control" id="alamat" rows="3" placeholder="Masukkan Alamat" name="alamat">{{ old('alamat') }}</textarea>
+                @error('alamat')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                <input type="submit" id="submit-agenda" name="submit-agenda" class="btn btn-primary">
+            </div>
+        </form>
     </div>
 
     <!-- Modal -->

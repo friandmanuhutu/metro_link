@@ -43,4 +43,11 @@ class PengaduanController extends Controller
 
         return redirect()->back()->with('success', 'Pengaduan berhasil dikirim!');
     }
+
+    public function show($id)
+    {
+        $pengaduan = Pengaduan::findOrFail($id);
+        return view('admin_DetailPengaduan', compact('pengaduan'));
+    }
+
 }
