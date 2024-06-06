@@ -170,8 +170,8 @@
 
         // Contoh data bencana alam (koordinat dan jenis)
         const disasters = [
-            { lat: -7.10167, lng: 112.166, type: 'Banjir', location: 'Kadung Rembung (Lamongan)' },
-            { lat: -7.12362, lng: 112.312, type: 'Banjir', location: 'Babat (Lamongan)' },
+            { lat: -7.10167, lng: 112.166, type: 'Banjir', location: 'Babat (Lamongan)' },
+            { lat: -7.12362, lng: 112.312, type: 'Banjir', location: 'Kadung Rembung (Lamongan)' },
             // tambahkan data bencana alam lainnya jika ada
         ];
 
