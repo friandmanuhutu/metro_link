@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\AjukanKendalaController;
 use App\Http\Controllers\agendakotaController;
+use App\Http\Controllers\PenilaianController;
 use App\Http\Controllers\SesiController;
 use App\Http\Middleware\UserAkses;
 use Illuminate\Support\Facades\Route;
@@ -59,8 +60,10 @@ Route::middleware(['auth'])->group(function () {
     // Peta Bencana
     Route::get('/metrolink/peta_bencana', [AdminController::class, 'peta_bencana']);
 
-
+    // Penilaian
     Route::get('/metrolink/service/berikan_penilaian', [AdminController::class,'formPenilaian']);
+    // Route::post('/metrolink/service/berikan_penilaian', [PenilaianController::class, 'PenilaianStore'])->name('penilaian.store');
+
     Route::get('/metrolink/galery', [AdminController::class, 'galery']);
     Route::get('/metrolink/agenda_kota', [AdminController::class, 'tampilkanAgenda']);
     Route::get('/metrolink/agenda_kota/create', [AdminController::class, 'createAgenda']);
