@@ -53,6 +53,15 @@
                 </li>
 
                 <li>
+                    <a href="/admin/pengaduan">
+                        <span class="icon">
+                            <ion-icon name="star"></ion-icon>
+                        </span>
+                        <span class="title">Ratting</span>
+                    </a>
+                </li>
+
+                <li>
                     <a href="">
                         <span class="icon">
                             <ion-icon name="lock-closed-outline"></ion-icon>
