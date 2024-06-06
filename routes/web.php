@@ -47,11 +47,12 @@ Route::middleware(['auth'])->group(function () {
 
     // Admin Komentar
     Route::get('/admin/komentar', [AdminController::class, 'AdminKomentar']);
-    Route::get('/admin/komentar', [PenilaianController::class, 'komenAdmin'])->name('penilaian.index');
+    // Route::get('/admin/komentar', [PenilaianController::class, 'komenAdmin'])->name('penilaian.index');
 
     // Tampilan user
     Route::get('/metrolink', [AdminController::class, 'user'])->middleware('UserAkses:user');
     Route::get('/metrolink/about_us', [AdminController::class, 'about_us']);
+    Route::get('/metrolink', [PenilaianController::class, 'komenAdmin'])->name('penilaian.index');
 
     // Service user
     Route::get('/metrolink/service', [AdminController::class, 'service']);

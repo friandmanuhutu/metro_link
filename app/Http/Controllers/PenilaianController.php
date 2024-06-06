@@ -12,7 +12,7 @@ class PenilaianController extends Controller
     {
         // Validasi request
         $request->validate([
-            'komentar' => 'required|string|max:255',
+            'komentar' => 'required|string|max:250',
         ]);
 
         // Simpan komentar ke dalam database
@@ -29,6 +29,6 @@ class PenilaianController extends Controller
     public function komenAdmin()
     {
         $comments = Penilaian::all(); // Ambil semua data komentar dari database
-        return view('admin_komentar', compact('comments')); // Kirim data ke view penilaian.index
+        return view('index', compact('comments')); // Kirim data ke view penilaian.index
     }
 }

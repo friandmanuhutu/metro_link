@@ -10,6 +10,47 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+         .komen-user {
+            display: flex;
+            gap: 20px;
+            margin: auto;
+            width: 80%;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+
+        .comment-card {
+            border: 5px solid #ccc;
+            border-radius: 25px;
+            max-height: 100%;
+            padding: 10px;
+            background-color: #f9f9f9;
+            flex: 1 1 calc(25% - 20px); /* Satu div akan mengambil 1/4 dari lebar container */
+            max-width: calc(25% - 20px);
+            box-sizing: border-box;
+            overflow: hidden; /* Mengatasi overflow */
+            word-wrap: break-word; /* Memastikan kata panjang dipotong */
+            height: 170px;
+        }
+
+        .comment-card .username {
+            font-weight: bold;
+        }
+
+        .comment-card .email {
+            color: #454545;
+            margin-bottom: 5px;
+        }
+
+        .comment-card .content {
+            color: #454545;
+            font-size: 12px;
+            margin-left: 0px;
+        }
+    </style>
 </head>
 <body>
     <div class="all">
@@ -182,6 +223,18 @@
             <tbody>
         </table>
     </div> --}}
+
+    <h3 style="display: flex;justify-content: center; margin-top:60px">help us to always grow</h3>
+    <h1 style="display: flex;justify-content: center;">Comment</h1>
+    <div class="komen-user">
+            @foreach($comments as $comment)
+            <div class="comment-card">
+                <div class="username">{{ $comment->username }}</div>
+                <div class="email">{{ $comment->email }}</div>
+                <div class="content">{{ $comment->komentar }}</div>
+            </div>
+            @endforeach
+    </div>
 
 
     <br>
