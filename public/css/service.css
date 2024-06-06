@@ -107,6 +107,15 @@ header{
     animation: fadeInUp 1s ease forwards;
 }
 
+.line{
+    width: 200px;
+    height: 4px;
+    background:#ff9e0d;
+    margin: 10px auto;
+    border-radius: 5px;
+    margin-bottom: 10vh;
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;

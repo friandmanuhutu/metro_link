@@ -10,6 +10,27 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <style>
+        #map { height: 50vh; }
+        .dokumentasi-category{
+        margin: 50px 0px 0px 0px;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        font-size: 45px;
+        color: #000000;
+        }
+    </style>
 </head>
 <body>
     <div class="all">
@@ -24,7 +45,7 @@
                 <li><a href="/metrolink/peta_bencana">Peta Bencana</a></li>
                 <li><a href="/metrolink/about_us">About Us</a></li>
                 <li><a href="/metrolink/galery">Gallery</a></li>
-                </ul>
+            </ul>
             <li><a href="/logout" style="background-color: #a60000;border-radius: 40px; color: white;padding: 8px 20px; font-size: 15px;font-weight: 600;border-bottom: 2px solid transparent; transition: all .55s ease;">Logout</a></li>
             <div class="bx bx-menu" id="menu-icon"></div>
         </header>
@@ -37,9 +58,11 @@
             <span>/ <a href="/metrolink/peta">Peta Bencana</a></span>
         </div>
     </div>
-
-
-
+    <section class="Ttgkami">
+        <h2 class="dokumentasi-category">Peta</h2>
+        <div class="line"></div>
+    </section>
+    <div id="map"></div>
 
     <div class="scroll-up">
         <a href="#"><i class="ri-arrow-up-s-fill"></i></a>
@@ -92,7 +115,101 @@
     </div>
 
     <script src="/js/script.js"></script>
+    <script>
+        const map = L.map('map'); 
+        // Initializes map
+
+        map.setView([-2.5489, 118.0149], 5); 
+        // Sets initial coordinates to Indonesia and zoom level
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap metro-link'
+        }).addTo(map); 
+        // Sets map data source and associates with map
+
+        let marker, circle, zoomed;
+
+        navigator.geolocation.watchPosition(success, error);
+
+        function success(pos) {
+
+            const lat = pos.coords.latitude;
+            const lng = pos.coords.longitude;
+            const accuracy = pos.coords.accuracy;
+
+            if (marker) {
+                map.removeLayer(marker);
+                map.removeLayer(circle);
+            }
+            // Removes any existing marker and circule (new ones about to be set)
+
+            marker = L.marker([lat, lng]).addTo(map);
+            circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
+            // Adds marker to the map and a circle for accuracy
+
+            if (!zoomed) {
+                zoomed = map.fitBounds(circle.getBounds()); 
+            }
+            // Set zoom to boundaries of accuracy circle
+
+            map.setView([lat, lng]);
+            // Set map focus to current user position
+
+        }
+
+        function error(err) {
+
+            if (err.code === 1) {
+                alert("Please allow geolocation access");
+            } else {
+                alert("Cannot get current location");
+            }
+
+        }
+
+        // Contoh data bencana alam (koordinat dan jenis)
+        const disasters = [
+            { lat: -7.10167, lng: 112.166, type: 'Banjir', location: 'Kadung Rembung (Lamongan)' },
+            { lat: -7.12362, lng: 112.312, type: 'Banjir', location: 'Babat (Lamongan)' },
+            // tambahkan data bencana alam lainnya jika ada
+        ];
+
+        // Loop melalui setiap bencana alam dan tambahkan marker ke peta
+        disasters.forEach(disaster => {
+            const { lat, lng, type, location } = disaster;
+            const iconUrl = getIconUrlByType(type); // fungsi untuk mendapatkan URL ikon berdasarkan jenis bencana
+            const icon = L.icon({
+                iconUrl,
+                iconSize: [32, 32],
+                iconAnchor: [16, 32],
+            });
+            const marker = L.marker([lat, lng], { icon }).addTo(map);
+
+            // Tambahkan pop-up dengan informasi yang sudah diubah
+            marker.bindPopup(`<b>Daerah :</b> ${location}<br><b>Jenis Bencana:</b> ${type}`);
+
+            // Tambahkan event listener untuk menampilkan informasi saat klik
+            marker.on('click', function (e) {
+                this.openPopup();
+            });
+        });
+
+
+        // Fungsi untuk mendapatkan URL ikon berdasarkan jenis bencana
+        function getIconUrlByType(type) {
+            // Tentukan URL ikon berdasarkan jenis bencana
+            switch (type) {
+                case 'Gempa Bumi':
+                    return '/assets/Earthquake.png';
+                case 'Banjir':
+                    return '/assets/Flood.png';
+                // tambahkan kasus lain jika diperlukan
+                default:
+                    return '/assets/default.png';
+            }
+        }
+    </script>
 
 </body>
-
 </html>
