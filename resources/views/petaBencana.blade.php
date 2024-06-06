@@ -21,11 +21,11 @@
                 <li><a href="/metrolink">Home</a></li>
                 <li><a href="/metrolink/service">Service</a></li>
                 <li><a href="/metrolink/agenda_kota">Agenda Kota</a></li>
+                <li><a href="/metrolink/peta_bencana">Peta Bencana</a></li>
                 <li><a href="/metrolink/about_us">About Us</a></li>
                 <li><a href="/metrolink/galery">Gallery</a></li>
-                <li><a href="/metrolink/petaBencana">Peta Bencana</a></li>
-                <li><a href="/logout" style="background-color: #a60000;border-radius: 40px;">Logout</a></li>
-            </ul>
+                </ul>
+            <li><a href="/logout" style="background-color: #a60000;border-radius: 40px; color: white;padding: 8px 20px; font-size: 15px;font-weight: 600;border-bottom: 2px solid transparent; transition: all .55s ease;">Logout</a></li>
             <div class="bx bx-menu" id="menu-icon"></div>
         </header>
 

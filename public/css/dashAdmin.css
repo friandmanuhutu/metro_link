@@ -332,7 +332,7 @@ body {
   word-break: break-word;
 }
 .details .recentOrders table tr td:last-child {
-  max-width: 100px;
+  max-width: 115px;
   text-align: center;
 }
 .details .recentOrders table tr td:nth-child(2) {

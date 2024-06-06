@@ -56,6 +56,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/metrolink/service/store', [AjukanKendalaController::class, 'store'])->name('pengaduan.store');
     Route::get('/admin/pengaduan/{id}', [PengaduanController::class, 'show'])->name('pengaduan.show');
 
+    // Peta Bencana
+    Route::get('/metrolink/peta_bencana', [AdminController::class, 'peta_bencana']);
+
+
     Route::get('/metrolink/service/berikan_penilaian', [AdminController::class,'formPenilaian']);
     Route::get('/metrolink/galery', [AdminController::class, 'galery']);
     Route::get('/metrolink/agenda_kota', [AdminController::class, 'tampilkanAgenda']);

@@ -241,4 +241,9 @@ class AdminController extends Controller
     public function formPenilaian(){
         return view('penilaian');
     }
+
+    public function peta_bencana(){
+        return view('petaBencana');
+    }
+
 }
