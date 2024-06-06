@@ -84,11 +84,11 @@ html,body {
     text-decoration: underline;
 }
 
-.container .star-widget input {
+.container .star-widget .form-penilaian input {
     display: none;
 }
 
-.star-widget label {
+.star-widget .form-penilaian label {
     font-size: 40px;
     color: #444;
     padding: 10px;
@@ -96,8 +96,8 @@ html,body {
     transition: all 0.2s ease;
 }
 
-.star-widget input:not(:checked) ~ label:hover,
-.star-widget input:not(:checked) ~ label:hover ~ label {
+.star-widget .form-penilaian input:not(:checked) ~ label:hover,
+.star-widget .form-penilaian input:not(:checked) ~ label:hover ~ label {
     color: #fd4;
 }
 
@@ -110,23 +110,23 @@ input#rate-5:checked ~ label {
     text-shadow: 0 0 20px #952;
 }
 
-#rate-1:checked ~ form header:before {
+#rate-1:checked ~ .form-penilaian form header:before {
     content: "Kureng banget!";
 }
-#rate-2:checked ~ form header:before {
+#rate-2:checked ~ .form-penilaian form header:before {
     content: "Kureng!";
 }
-#rate-3:checked ~ form header:before {
+#rate-3:checked ~ .form-penilaian form header:before {
     content: "Lumayan lah!";
 }
-#rate-4:checked ~ form header:before {
+#rate-4:checked ~ .form-penilaian form header:before {
     content: "Bagus!";
 }
-#rate-5:checked ~ form header:before {
+#rate-5:checked ~ .form-penilaian form header:before {
     content: "Bagus banget!";
 }
 
-.container form {
+.container .form-penilaian form {
     display: none;
 }
 
@@ -134,7 +134,7 @@ input:checked ~ form {
     display: block;
 }
 
-form header {
+.form-penilaian form header {
     width: 100%;
     font-size: 25px;
     color: #ff9e0d;
@@ -144,13 +144,13 @@ form header {
     transition: all 0.2s ease;
 }
 
-form .textarea {
+.form-penilaian form .textarea {
     height: 100px;
     width: 100%;
     overflow: hidden;
 }
 
-form .textarea textarea {
+.form-penilaian form .textarea textarea {
     height: 100%;
     width: 100%;
     color: #eee;
@@ -161,13 +161,13 @@ form .textarea textarea {
     font-size: 17px;
 }
 
-form .btn {
+.form-penilaian form .btn {
     height: 45px;
     width: 100%;
     margin: 15px 0;
 }
 
-form .btn button {
+.form-penilaian form .btn button {
     height: 100%;
     width: 100%;
     border: 1px solid #ff9e0d;
@@ -180,7 +180,7 @@ form .btn button {
     text-transform: uppercase;
     transition: all 0.3s ease;
 }
-form .btn button:hover {
+.form-penilaian form .btn button:hover {
     background: #1b1b1b;
 }
 

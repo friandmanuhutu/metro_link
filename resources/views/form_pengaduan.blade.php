@@ -15,7 +15,7 @@
 
 <body>
     <div class="container pt-4 bg-white">
-        <h1 style="-webkit-text-stroke: medium">AJUKAN KENDALA</h1>
+        <h1 style="-webkit-text-stroke: medium; letter-spacing: 5px">AJUKAN KENDALA</h1>
         <span><a href="/metrolink/service" style="padding: 7px 22px 10px 22px;text-decoration: none;color: aliceblue;background-color: #1e1e1e;border-radius: 7px;">Back</a></span>
         <hr>
 
