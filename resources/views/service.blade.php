@@ -46,20 +46,20 @@
         <div class="box-service">
             <img src="/assets/service-1.jpg" alt=""><br>
             <h3>INFORMASI KOTA</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iusto, voluptate quae expedita optio ex Illum</p><br>
+            <p>Kenali kota Anda lebih dalam dengan informasi terbaru dan terlengkap!</p><br>
 
             <a href="/metrolink/#informasi" class="btn-service1">See more</a>
         </div>
         <div class="box-service">
             <img src="/assets/service-4.jpg" alt=""><br>
-            <h3>PROBLEM COMPLAINTS</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iusto, voluptate quae expedita optio ex Illum</p><br>
+            <h3>AJUKAN KENDALA</h3>
+            <p>Kendala apapun, sampaikan pada kami. Kami di sini untuk menyelesaikannya!</p><br>
             <a href="/metrolink/service/ajukan_kendala" class="btn-service1">See more</a>
         </div>
         <div class="box-service">
             <img src="/assets/service-5.jpg" alt=""><br>
-            <h3>GIVE US RATING</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iusto, voluptate quae expedita optio ex Illum </p><br>
+            <h3>BERI KAMI MASUKAN</h3>
+            <p>Pendapat anda berarti bagi kami. Beri kami masukan untuk terus berkembang!</p><br>
             <a href="/metrolink/service/berikan_penilaian" class="btn-service1">See more</a>
         </div>
     </div>
