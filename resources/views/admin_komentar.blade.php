@@ -89,6 +89,14 @@
                     </label>
                 </div>
             </div>
+            <h1>Daftar Komentar</h1>
+            @foreach($comments as $comment)
+            <div class="comment-card">
+                <div class="username">{{ $comment->username }}</div>
+                <div class="email">{{ $comment->email }}</div>
+                <div class="content">{{ $comment->komentar }}</div>
+            </div>
+            @endforeach
 
             <div class="details">
                 <div class="recentOrders">
