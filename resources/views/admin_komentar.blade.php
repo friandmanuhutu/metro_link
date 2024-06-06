@@ -90,6 +90,34 @@
                 </div>
             </div>
 
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Data Pengaduan Masyarakat</h2>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Komentar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($comments as $comment)
+                            <tr>
+                                <td>{{ $comment->id }}</td>
+                                <td>{{ $comment->username }}</td>
+                                <td>{{ $comment->email }}</td>
+                                <td>{{ $comment->komentar }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- =========== Scripts =========  -->

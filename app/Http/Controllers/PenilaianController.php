@@ -25,4 +25,10 @@ class PenilaianController extends Controller
         // Redirect dengan pesan sukses
         return redirect()->back()->with('success', 'Komentar berhasil disimpan!');
     }
+
+    public function komenAdmin()
+    {
+        $comments = Penilaian::all(); // Ambil semua data komentar dari database
+        return view('admin_komentar', compact('comments')); // Kirim data ke view penilaian.index
+    }
 }
