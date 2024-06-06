@@ -91,7 +91,7 @@
             <div class="cardBox">
                 <div class="card">
                     <div>
-                        <div class="numbers">0</div>
+                        <div class="numbers">{{ $totalPengaduan }}</div>
                         <div class="cardName">Total Pengaduan</div>
                     </div>
 

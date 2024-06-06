@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\agenda_kota;
+use App\Models\Pengaduan;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,11 +25,12 @@ class AdminController extends Controller
 
     public function count()
     {
+        $totalPengaduan = Pengaduan::count();
         $totalAgendaTersedia =  agenda_kota::count();
         $totalAdminAkun = User::where('tipe_user', 'admin')->count();
         $totalUserAkun = User::where('tipe_user', 'user')->count();
 
-        return view('dashboardAdmin', compact( 'totalAgendaTersedia', 'totalAdminAkun','totalUserAkun' ));
+        return view('dashboardAdmin', compact( 'totalPengaduan','totalAgendaTersedia', 'totalAdminAkun','totalUserAkun' ));
     }
 
     // CRUD AKUN DI ADMIN =================================================================================================================
