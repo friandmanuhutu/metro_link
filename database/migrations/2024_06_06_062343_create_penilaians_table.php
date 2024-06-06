@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('penilaians', function (Blueprint $table) {
             $table->id();
-            $table->integer('rating'); // Kolom untuk menyimpan rating
-            $table->text('keterangan')->nullable(); // Kolom untuk menyimpan keterangan
+            $table->string('username');
+            $table->string('email');
+            $table->text('komentar');
             $table->timestamps();
         });
     }

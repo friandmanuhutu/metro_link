@@ -246,4 +246,8 @@ class AdminController extends Controller
         return view('petaBencana');
     }
 
+    public function AdminKomentar(){
+        return view('admin_komentar');
+    }
+
 }

@@ -53,11 +53,11 @@
                 </li>
 
                 <li>
-                    <a href="/admin/pengaduan">
+                    <a href="/admin/komentar">
                         <span class="icon">
-                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="chatbubbles"></ion-icon>
                         </span>
-                        <span class="title">Ratting</span>
+                        <span class="title">Komentar</span>
                     </a>
                 </li>
 

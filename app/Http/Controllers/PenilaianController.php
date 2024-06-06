@@ -4,24 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\Penilaian;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PenilaianController extends Controller
 {
-    public function PenilaianStore(Request $request)
+    public function store(Request $request)
     {
-        // Validasi data masukan
+        // Validasi request
         $request->validate([
-            'rating' => 'required|integer|min:1|max:5',
-            'keterangan' => 'nullable|string|max:255',
+            'komentar' => 'required|string|max:255',
         ]);
 
-        // Simpan data ke database
+        // Simpan komentar ke dalam database
         Penilaian::create([
-            'rating' => $request->rating,
-            'keterangan' => $request->keterangan,
+            'username' => auth()->user()->username, // Ambil username dari user yang sedang login
+            'email' => auth()->user()->email, // Ambil email dari user yang sedang login
+            'komentar' => $request->komentar,
         ]);
 
-        // Redirect atau berikan respons sesuai kebutuhan aplikasi Anda
-        return redirect('/metrolink/service')->with('success', 'Terima kasih atas penilaian Anda!');
+        // Redirect dengan pesan sukses
+        return redirect()->back()->with('success', 'Komentar berhasil disimpan!');
     }
 }

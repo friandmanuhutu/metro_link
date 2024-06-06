@@ -45,6 +45,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/admin/pengaduan', [PengaduanController::class, 'store']);
     // Route::get('/admin/pengaduan', [AdminController::class, 'search_pengaduan']);
 
+    // Admin Komentar
+    Route::get('/admin/komentar', [AdminController::class, 'AdminKomentar']);
+
     // Tampilan user
     Route::get('/metrolink', [AdminController::class, 'user'])->middleware('UserAkses:user');
     Route::get('/metrolink/about_us', [AdminController::class, 'about_us']);
@@ -62,6 +65,8 @@ Route::middleware(['auth'])->group(function () {
 
     // Penilaian
     Route::get('/metrolink/service/berikan_penilaian', [AdminController::class,'formPenilaian']);
+    Route::post('/metrolink/service/berikan_penilaian/store', [PenilaianController::class, 'store'])->name('penilaian.store');
+
     // Route::post('/metrolink/service/berikan_penilaian', [PenilaianController::class, 'PenilaianStore'])->name('penilaian.store');
 
     Route::get('/metrolink/galery', [AdminController::class, 'galery']);

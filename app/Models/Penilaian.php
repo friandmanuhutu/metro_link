@@ -9,10 +9,9 @@ class Penilaian extends Model
 {
     use HasFactory;
 
-    protected $table = 'penilaian'; // Tentukan nama tabel yang sesuai
-
     protected $fillable = [
-        'rating',
-        'keterangan',
+        'username',
+        'email',
+        'komentar'
     ];
 }

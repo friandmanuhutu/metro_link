@@ -35,13 +35,12 @@
             </div>
         @endif
 
-        <form action="{{ route('pengaduan.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('penilaian.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-3">
-                {{-- <label class="form-label" for="deskripsi_pengaduan"></label> --}}
-                <textarea class="form-control" id="deskripsi_pengaduan" rows="16" placeholder="Masukkan Komentar Anda" name="deskripsi_pengaduan">{{ old('deskripsi_pengaduan') }}</textarea>
-                @error('deskripsi_pengaduan')
+                <textarea class="form-control" id="komentar" rows="16" placeholder="Masukkan Komentar Anda" name="komentar">{{ old('komentar') }}</textarea>
+                @error('komentar')
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
