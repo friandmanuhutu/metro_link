@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\agenda_kota;
 use App\Models\Pengaduan;
+use App\Models\Penilaian;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -247,7 +248,8 @@ class AdminController extends Controller
     }
 
     public function AdminKomentar(){
-        return view('admin_komentar');
+        $comments = Penilaian::all(); // Ambil semua data komentar dari database
+        return view('admin_komentar', compact('comments')); // Kirim data ke view penilaian.index
     }
 
 }

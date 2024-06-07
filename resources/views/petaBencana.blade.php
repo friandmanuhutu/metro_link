@@ -21,7 +21,7 @@
     crossorigin=""></script>
 
     <style>
-        #map { height: 50vh; }
+        #map { height: 70vh; }
         .dokumentasi-category{
         margin: 50px 0px 0px 0px;
         font-weight: 700;
@@ -116,16 +116,16 @@
 
     <script src="/js/script.js"></script>
     <script>
-        const map = L.map('map'); 
+        const map = L.map('map');
         // Initializes map
 
-        map.setView([-2.5489, 118.0149], 5); 
+        map.setView([-2.5489, 118.0149], 5);
         // Sets initial coordinates to Indonesia and zoom level
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '© OpenStreetMap metro-link'
-        }).addTo(map); 
+        }).addTo(map);
         // Sets map data source and associates with map
 
         let marker, circle, zoomed;
@@ -149,7 +149,7 @@
             // Adds marker to the map and a circle for accuracy
 
             if (!zoomed) {
-                zoomed = map.fitBounds(circle.getBounds()); 
+                zoomed = map.fitBounds(circle.getBounds());
             }
             // Set zoom to boundaries of accuracy circle
 
@@ -170,10 +170,17 @@
 
         // Contoh data bencana alam (koordinat dan jenis)
         const disasters = [
-            { lat: -7.10167, lng: 112.166, type: 'Banjir', location: 'Babat (Lamongan)' },
-            { lat: -7.12362, lng: 112.312, type: 'Banjir', location: 'Kadung Rembung (Lamongan)' },
-            // tambahkan data bencana alam lainnya jika ada
+            { lat: -7.245973, lng: 112.737647, type: 'Gempa Bumi', location: 'Komplek Tugu pahlawan' },
+            { lat: -7.281206, lng: 112.734103, type: 'Banjir', location: 'Dokter Sutomo' },
+            { lat: -7.291854, lng: 112.726494, type: 'Banjir', location: 'Darmo' },
+            { lat: -7.310605, lng: 112.734364, type: 'Tanah Longsor', location: 'Wonokromo' },
+            { lat: -7.317194, lng: 112.742062, type: 'Banjir', location: 'Semolowaru' },
+            { lat: -7.309387, lng: 112.740137, type: 'Kebakaran', location: 'Bendul Merisi' },
+            { lat: -7.314277, lng: 112.752456, type: 'Gempa Bumi', location: 'Sidosermo' },
+            { lat: -7.297647, lng: 112.732368, type: 'Kebakaran Hutan', location: 'Sawonggaling' },
+            // Silakan tambahkan lebih banyak data bencana alam di Surabaya di sini sesuai kebutuhan
         ];
+
 
         // Loop melalui setiap bencana alam dan tambahkan marker ke peta
         disasters.forEach(disaster => {
@@ -204,7 +211,6 @@
                     return '/assets/Earthquake.png';
                 case 'Banjir':
                     return '/assets/Flood.png';
-                // tambahkan kasus lain jika diperlukan
                 default:
                     return '/assets/default.png';
             }
