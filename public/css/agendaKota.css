@@ -347,6 +347,7 @@ div .right p {
     background:#ff9e0d;
     margin: 10px auto;
     border-radius: 5px;
+    margin-bottom: 5%;
 }
 
 /* Tentang kami? */
@@ -544,6 +545,7 @@ section{
     max-width: 100%; /* Membatasi lebar maksimum tabel agar tidak melebihi lebar tampilan */
     white-space: nowrap;
     background-color: white;
+    margin-bottom: 10vh;
 }
 
 .fl-table td,

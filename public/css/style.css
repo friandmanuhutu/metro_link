@@ -144,6 +144,88 @@ nav ul li a:hover {
     animation: fadeInUp 1s ease forwards;
 }
 
+.komen-user {
+    width: 80%;
+    margin: 20px auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.comment-card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.comment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.comment-card .username {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+}
+
+.comment-card .username::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.comment-card .email {
+    font-size: 0.9em;
+    color: #95a5a6;
+    margin-bottom: 12px;
+}
+
+.comment-card .content {
+    font-size: 1em;
+    color: #34495e;
+    line-height: 1.6;
+}
+
+.comment-card .content p {
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 600px) {
+    .komen-user {
+        width: 95%;
+    }
+
+    .comment-card {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .comment-card .username {
+        font-size: 1.1em;
+    }
+
+    .comment-card .email {
+        font-size: 0.85em;
+    }
+
+    .comment-card .content {
+        font-size: 0.95em;
+    }
+}
+
+
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -164,6 +246,7 @@ nav ul li a:hover {
 }
 
 .content form {
+    width: 400px;
     display: flex;
     align-items: center;
     background: #fff;
@@ -761,10 +844,10 @@ hr {
     to {opacity: 1}
   }
 
-@media (max-width: 700px), (max-width: 900px) {
-
-    #menu-icon{
+  @media (max-width: 900px) {
+    #menu-icon {
         display: block;
+        cursor: pointer;
     }
 
     .logo img {
@@ -772,28 +855,34 @@ hr {
         padding-top: 10px;
     }
 
-    .nav-list{
+    .nav-list {
+        margin: 0;
         position: absolute;
-        top: 100%;
+        top: 0;
         right: -300px;
         width: 300px;
-        height: 40vh;
+        height: 100vh;
         background-color: black;
         display: flex;
         align-items: center;
         flex-direction: column;
         padding: 50px 20px;
         transition: all .55s ease;
+        overflow-y: auto; /* Optional: to allow scrolling within the menu */
     }
 
-    .nav-list a{
+    .nav-list a {
+        color: white; /* Ensure the links are visible */
         display: block;
         margin: 7px 0;
-        margin-left: 0;
     }
 
-    .nav-list.open{
+    .nav-list.open {
         right: 0;
+    }
+
+    body.no-scroll {
+        overflow: hidden;
     }
 
     .service h2 {
@@ -811,6 +900,7 @@ hr {
     }
 
     .container {
+        display: flex;
         min-height: 80vh;
     }
 

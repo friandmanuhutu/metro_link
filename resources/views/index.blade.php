@@ -23,7 +23,6 @@
 
 
         .comment-card {
-            border: 5px solid #ccc;
             border-radius: 25px;
             max-height: 100%;
             padding: 10px;
@@ -76,7 +75,6 @@
             <div class="dropdown">
                 <form id="cityForm">
                 <input type="text" id="cityInput" placeholder="Cari Service Kami">
-                <button type="submit" class="btn">Search</button>
                 </form>
             <div class="dropdown-content" id="cityDropdown">
                 <a href="/metrolink/#informasi">Informasi Kota</a>
@@ -262,6 +260,8 @@
                     <p>Ahmad Hazli</p>
                     <p>Arya Arief</p>
                     <p>Friand Jacnus</p>
+                    <p>Muhammad Ghaisan</p>
+                    <p>Ittishal Tsaqif</p>
                     <p class="email-id">metrolink@outlook.com</p>
                     <h4>Telkom University Surabaya</h4>
                 </div>

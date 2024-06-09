@@ -107,6 +107,8 @@
                     <p>Ahmad Hazli</p>
                     <p>Arya Arief</p>
                     <p>Friand Jacnus</p>
+                    <p>Muhammad Ghaisan</p>
+                    <p>Ittishal Tsaqif</p>
                     <p class="email-id">metrolink@outlook.com</p>
                     <h4>Telkom University Surabaya</h4>
                 </div>

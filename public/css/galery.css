@@ -923,7 +923,7 @@ hr {
         top: 100%;
         right: -300px;
         width: 300px;
-        height: 40vh;
+        height: 200vh;
         background-color: black;
         display: flex;
         align-items: center;
@@ -962,6 +962,7 @@ hr {
 
     .container {
         min-height: 80vh;
+        display: flex;
     }
 
     .content {

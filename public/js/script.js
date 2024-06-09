@@ -1,11 +1,14 @@
 // --------navbar---------
-let menu = document.querySelector('#menu-icon');
-let navlist = document.querySelector('.nav-list');
+document.addEventListener("DOMContentLoaded", function() {
+    var menuIcon = document.getElementById("menu-icon");
+    var navList = document.querySelector(".nav-list");
+    var body = document.body;
 
-menu.onclick = () => {
-    menu.classList.toggle('bx-x');
-    navlist.classList.toggle('open');
-}
+    menuIcon.addEventListener("click", function() {
+        navList.classList.toggle("open");
+        body.classList.toggle("no-scroll");
+    });
+});
 
 // -------SlideShow-------
 let slideIndex = 1;

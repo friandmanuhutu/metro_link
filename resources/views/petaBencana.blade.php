@@ -30,6 +30,136 @@
         font-size: 45px;
         color: #000000;
         }
+
+        /* Style untuk tabel di perangkat besar */
+.fl-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fl-table th, .fl-table td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+}
+
+.fl-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.fl-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.fl-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.fl-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+/* Responsif untuk perangkat dengan lebar kurang dari 600px */
+@media (max-width: 600px) {
+    .fl-table thead {
+        display: none;
+    }
+
+    .fl-table, .fl-table tbody, .fl-table tr, .fl-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .fl-table tr {
+        margin-bottom: 15px;
+    }
+
+    .fl-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .fl-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+        background-color: #f8f8f8;
+        border-right: 1px solid #dddddd;
+        box-shadow: inset 1px 0 0 #dddddd;
+    }
+
+    .fl-table td:last-child {
+        border-bottom: 2px solid #009879;
+    }
+}
+
+/* Style tambahan untuk tampilan lebih menarik */
+.fl-table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.fl-table tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+}
+
+.table-wrapper {
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Tambahkan overflow-x: auto; untuk menangani konten yang melebihi lebar halaman */
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td,
+.fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+    word-wrap: break-word;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #333;
+}
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #ff9e0d;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
     </style>
 </head>
 <body>
@@ -63,6 +193,66 @@
         <div class="line"></div>
     </section>
     <div id="map"></div>
+    <section class="Ttgkami">
+        <h2 class="dokumentasi-category">Detail Informasi</h2>
+        <div class="line"></div>
+    </section>
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Daerah</th>
+                <th>Kendala Bencana</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Komplek Tugu Pahlawan</td>
+                <td>Gempa Bumi</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Dokter Sutomo</td>
+                <td>Banjir</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Dokter Sutomo</td>
+                <td>Banjir</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Darmo</td>
+                <td>Banjir</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Wonokromo</td>
+                <td>Tanah Longor</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Semolowaru</td>
+                <td>Banjir</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Bendul Merisi</td>
+                <td>Kebakaran</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Sidosermo</td>
+                <td>Gempa Bumi</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Sawonggaling</td>
+                <td>Gempa Bumi</td>
+            </tr>
+        </tbody>
+    </table>
 
     <div class="scroll-up">
         <a href="#"><i class="ri-arrow-up-s-fill"></i></a>
@@ -79,6 +269,8 @@
                     <p>Ahmad Hazli</p>
                     <p>Arya Arief</p>
                     <p>Friand Jacnus</p>
+                    <p>Muhammad Ghaisan</p>
+                    <p>Ittishal Tsaqif</p>
                     <p class="email-id">metrolink@outlook.com</p>
                     <h4>Telkom University Surabaya</h4>
                 </div>
@@ -124,7 +316,6 @@
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
-            attribution: '© OpenStreetMap metro-link'
         }).addTo(map);
         // Sets map data source and associates with map
 
