@@ -31,4 +31,12 @@ class PenilaianController extends Controller
         $comments = Penilaian::all(); // Ambil semua data komentar dari database
         return view('index', compact('comments')); // Kirim data ke view penilaian.index
     }
+
+    public function destroy($id)
+    {
+        $komentar = Penilaian::findOrFail($id);
+        $komentar->delete();
+
+        return redirect()->back()->with('success', 'Komentar berhasil dihapus!');
+    }
 }

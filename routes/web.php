@@ -47,6 +47,7 @@ Route::middleware(['auth'])->group(function () {
 
     // Admin Komentar
     Route::get('/admin/komentar', [AdminController::class, 'AdminKomentar']);
+    Route::delete('admin/komentar/{id}', [PenilaianController::class, 'destroy'])->name('penilaian.destroy');
     // Route::get('/admin/komentar', [PenilaianController::class, 'komenAdmin'])->name('penilaian.index');
 
     // Tampilan user

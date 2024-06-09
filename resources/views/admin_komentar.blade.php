@@ -10,6 +10,35 @@
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="/css/dashAdmin.css">
     <link rel="stylesheet" href="/css/animations.css"> <!-- Add this line -->
+    <style>
+        /* CSS untuk notifikasi pop-up */
+        .popup-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1000;
+        }
+
+        .popup-notification.show {
+            display: block;
+        }
+
+        .popup-notification button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -102,6 +131,7 @@
                                 <th>Username</th>
                                 <th>Email</th>
                                 <th>Komentar</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -111,45 +141,55 @@
                                 <td>{{ $comment->username }}</td>
                                 <td>{{ $comment->email }}</td>
                                 <td>{{ $comment->komentar }}</td>
+                                <td>
+                                    <form action="{{ route('penilaian.destroy', $comment->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger" style="padding: 7px 14px;color: white;background-color: #d50000;font-family: monospace;">Delete</button>
+                                    </form>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
-
-            {{-- <div class="komentar-user">
-                <h1>Daftar Komentar</h1>
-                <div class="comment-container">
-                    @foreach($comments as $comment)
-                    <div class="comment-card">
-                        <div class="username">{{ $comment->username }}</div>
-                        <div class="email">{{ $comment->email }}</div>
-                        <div class="content">{{ $comment->komentar }}</div>
-                    </div>
-                    @endforeach
-                </div>
-            </div> --}}
         </div>
+    </div>
+
+    <!-- Notifikasi pop-up -->
+    <div id="popupNotification" class="popup-notification">
+        <span id="popupMessage"></span>
+        <button onclick="closePopup()">Close</button>
     </div>
 
     <!-- =========== Scripts =========  -->
     <script src="/js/admin.js"></script>
     <script>
+        function closePopup() {
+            document.getElementById('popupNotification').classList.remove('show');
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
-        const links = document.querySelectorAll('.view-link');
+            const links = document.querySelectorAll('.view-link');
 
-        links.forEach(link => {
-            link.addEventListener('mouseover', function () {
-                this.style.color = 'darkblue';
+            links.forEach(link => {
+                link.addEventListener('mouseover', function () {
+                    this.style.color = 'darkblue';
+                });
+
+                link.addEventListener('mouseout', function () {
+                    this.style.color = 'blue';
+                });
             });
 
-            link.addEventListener('mouseout', function () {
-                this.style.color = 'blue';
-            });
+            @if(session('success'))
+                document.getElementById('popupMessage').textContent = '{{ session('success') }}';
+                document.getElementById('popupNotification').classList.add('show');
+                setTimeout(closePopup, 5000); // Popup will auto-close after 5 seconds
+            @endif
         });
-    });
-    </script> <!-- Add this line -->
+    </script>
     <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

@@ -216,7 +216,7 @@ body {
   width: 100%;
   padding: 20px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
 }
 
@@ -332,8 +332,8 @@ body {
   word-break: break-word;
 }
 .details .recentOrders table tr td:last-child {
-  max-width: 115px;
-  text-align: center;
+    text-align: center;
+    min-width: 131px;
 }
 .details .recentOrders table tr td:nth-child(2) {
   text-align: center;
@@ -425,6 +425,7 @@ body {
     background-color: #287328;
     color: aliceblue;
     border-radius: 10px;
+    font-family: monospace;
 }
 
 .details .btn-accadmin:hover{
@@ -440,6 +441,7 @@ body {
   color: azure;
   text-decoration: none;
   border-radius: 5px;
+  font-family: monospace;
 }
 
 .details .btn-edit:hover{
@@ -458,6 +460,7 @@ body {
     cursor: pointer;
     border-radius: 4px;
     border: none;
+    font-family: monospace;
 }
 .btn-delete:hover {
   background-color: #d32f2f;

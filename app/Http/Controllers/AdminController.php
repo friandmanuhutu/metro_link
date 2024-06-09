@@ -27,11 +27,12 @@ class AdminController extends Controller
     public function count()
     {
         $totalPengaduan = Pengaduan::count();
+        $totalKomentar = Penilaian::count();
         $totalAgendaTersedia =  agenda_kota::count();
         $totalAdminAkun = User::where('tipe_user', 'admin')->count();
         $totalUserAkun = User::where('tipe_user', 'user')->count();
 
-        return view('dashboardAdmin', compact( 'totalPengaduan','totalAgendaTersedia', 'totalAdminAkun','totalUserAkun' ));
+        return view('dashboardAdmin', compact( 'totalPengaduan','totalKomentar','totalAgendaTersedia','totalAdminAkun','totalUserAkun' ));
     }
 
     // CRUD AKUN DI ADMIN =================================================================================================================

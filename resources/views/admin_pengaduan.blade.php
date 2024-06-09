@@ -10,6 +10,28 @@
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="/css/dashAdmin.css">
     <link rel="stylesheet" href="/css/animations.css"> <!-- Add this line -->
+
+    <style>
+        /* Gaya untuk tombol View */
+.view-link {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #007bff; /* Warna teks biru */
+    border: 1px solid #007bff; /* Garis pinggir biru */
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.view-link:hover {
+    background-color: #007bff; /* Warna latar biru saat dihover */
+    color: #fff; /* Warna teks putih saat dihover */
+    border-color: #007bff; /* Garis pinggir biru saat dihover */
+}
+
+    </style>
 </head>
 
 <body>

@@ -122,6 +122,17 @@
 
                 <div class="card">
                     <div>
+                        <div class="numbers">{{ $totalKomentar }}</div>
+                        <div class="cardName">Total Komentar</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
                         <div class="numbers">{{ $totalAdminAkun }}</div>
                         <div class="cardName">Total Admin Akun</div>
                     </div>
@@ -142,6 +153,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </div>
 
     <!-- =========== Scripts =========  -->
