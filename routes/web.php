@@ -29,11 +29,9 @@ Route::middleware(['auth'])->group(function () {
     //  Admin Agenda Kota
     Route::get('/admin/agenda_kota', [AdminController::class, 'AdminAgendakota']);
     Route::put('/admin/agenda_kota/{id}', [AdminController::class, 'updateStatus'])->name('admin.agenda_kota.update');
-    Route::get('/admin/agenda_kota', [AdminController::class, 'search_agendakota'])->name('admin.agenda_kota.search');
 
     // Admin Akun admin CRUD
     Route::get('/admin/akun_admin', [AdminController::class, 'akun_admin']);
-    Route::get('/admin/akun_admin', [AdminController::class, 'search_adminAkun']);
     Route::get('/admin/akun_admin/create', [AdminController::class, 'Admin_createAkun']);
     Route::post('/admin/akun_admin/store', [AdminController::class, 'Admin_storeAkun']);
     Route::get('/admin/akun_admin/edit/{id}', [AdminController::class, 'admin_editAkun']);
@@ -43,7 +41,6 @@ Route::middleware(['auth'])->group(function () {
     // Admin Pengaduan
     Route::get('/admin/pengaduan', [PengaduanController::class, 'create']);
     Route::post('/admin/pengaduan', [PengaduanController::class, 'store']);
-    // Route::get('/admin/pengaduan', [AdminController::class, 'search_pengaduan']);
 
     // Admin Komentar
     Route::get('/admin/komentar', [AdminController::class, 'AdminKomentar']);

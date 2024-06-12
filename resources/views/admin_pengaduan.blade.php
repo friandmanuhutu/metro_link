@@ -9,28 +9,26 @@
     <link rel="icon" href="/assets/logo-01.png" type="image/x-icon">
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="/css/dashAdmin.css">
-    <link rel="stylesheet" href="/css/animations.css"> <!-- Add this line -->
-
+    <link rel="stylesheet" href="/css/animations.css">
     <style>
         /* Gaya untuk tombol View */
-.view-link {
-    display: inline-block;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #007bff; /* Warna teks biru */
-    border: 1px solid #007bff; /* Garis pinggir biru */
-    border-radius: 4px;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-}
+        .view-link {
+            display: inline-block;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #007bff;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
 
-.view-link:hover {
-    background-color: #007bff; /* Warna latar biru saat dihover */
-    color: #fff; /* Warna teks putih saat dihover */
-    border-color: #007bff; /* Garis pinggir biru saat dihover */
-}
-
+        .view-link:hover {
+            background-color: #007bff;
+            color: #fff;
+            border-color: #007bff;
+        }
     </style>
 </head>
 
@@ -106,7 +104,7 @@
                 </div>
                 <div class="search">
                     <label>
-                        <input type="text" placeholder="Search here">
+                        <input type="text" id="searchInput" placeholder="Search here">
                         <ion-icon name="search-outline"></ion-icon>
                     </label>
                 </div>
@@ -116,7 +114,7 @@
                     <div class="cardHeader">
                         <h2>Data Pengaduan Masyarakat</h2>
                     </div>
-                    <table>
+                    <table id="pengaduanTable">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -146,28 +144,55 @@
                     </table>
                 </div>
             </div>
+        </div>
+
+        <!-- =========== Scripts =========  -->
+        <script src="/js/admin.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const searchInput = document.getElementById('searchInput');
+                const table = document.getElementById('pengaduanTable');
+                const rows = table.getElementsByTagName('tr');
+
+                searchInput.addEventListener('keyup', function () {
+                    const filter = searchInput.value.toLowerCase();
+
+                    for (let i = 1; i < rows.length; i++) { // Mulai dari 1 untuk menghindari header
+                        const cells = rows[i].getElementsByTagName('td');
+                        let found = false;
+
+                        for (let j = 0; j < cells.length; j++) {
+                            if (cells[j].innerText.toLowerCase().indexOf(filter) > -1) {
+                                found = true;
+                                break;
+                            }
+                        }
+
+                        if (found) {
+                            rows[i].style.display = '';
+                        } else {
+                            rows[i].style.display = 'none';
+                        }
+                    }
+                });
+
+                const links = document.querySelectorAll('.view-link');
+
+                links.forEach(link => {
+                    link.addEventListener('mouseover', function () {
+                        this.style.color = 'darkblue';
+                    });
+
+                    link.addEventListener('mouseout', function () {
+                        this.style.color = 'blue';
+                    });
+                });
+            });
+        </script>
+        <!-- ====== ionicons ======= -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </div>
-
-    <!-- =========== Scripts =========  -->
-    <script src="/js/admin.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-        const links = document.querySelectorAll('.view-link');
-
-        links.forEach(link => {
-            link.addEventListener('mouseover', function () {
-                this.style.color = 'darkblue';
-            });
-
-            link.addEventListener('mouseout', function () {
-                this.style.color = 'blue';
-            });
-        });
-    });
-    </script> <!-- Add this line -->
-    <!-- ====== ionicons ======= -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

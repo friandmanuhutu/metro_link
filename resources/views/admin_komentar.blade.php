@@ -113,7 +113,7 @@
                 </div>
                 <div class="search">
                     <label>
-                        <input type="text" placeholder="Search here">
+                        <input type="text" id="searchInput" placeholder="Search here">
                         <ion-icon name="search-outline"></ion-icon>
                     </label>
                 </div>
@@ -124,7 +124,7 @@
                     <div class="cardHeader">
                         <h2>Data Pengaduan Masyarakat</h2>
                     </div>
-                    <table>
+                    <table id="pengaduanTable">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -171,6 +171,32 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('searchInput');
+            const table = document.getElementById('pengaduanTable');
+            const rows = table.getElementsByTagName('tr');
+
+            searchInput.addEventListener('keyup', function () {
+                const filter = searchInput.value.toLowerCase();
+
+                for (let i = 1; i < rows.length; i++) { // Mulai dari 1 untuk menghindari header
+                    const cells = rows[i].getElementsByTagName('td');
+                    let found = false;
+
+                    for (let j = 0; j < cells.length; j++) {
+                        if (cells[j].innerText.toLowerCase().indexOf(filter) > -1) {
+                            found = true;
+                            break;
+                        }
+                    }
+
+                    if (found) {
+                        rows[i].style.display = '';
+                    } else {
+                        rows[i].style.display = 'none';
+                    }
+                }
+            });
+
             const links = document.querySelectorAll('.view-link');
 
             links.forEach(link => {

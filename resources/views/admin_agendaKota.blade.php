@@ -89,13 +89,10 @@
                 </div>
 
                 <div class="search">
-                    <form action="{{ route('admin.agenda_kota.search') }}" method="GET">
-                        <label>
-                            <input type="text" name="search" placeholder="Search here">
-                            <ion-icon name="search-outline"></ion-icon>
-                            <button type="submit" style="display: none"></button>
-                        </label>
-                    </form>
+                    <label>
+                        <input type="text" id="searchInput" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
                 </div>
             </div>
 
@@ -104,7 +101,7 @@
                     <div class="cardHeader">
                         <h2>Data Agenda Kota</h2>
                     </div>
-                    <table>
+                    <table id="agendaTable">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -154,6 +151,36 @@
     <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('searchInput');
+            const table = document.getElementById('agendaTable');
+            const rows = table.getElementsByTagName('tr');
+
+            searchInput.addEventListener('keyup', function () {
+                const filter = searchInput.value.toLowerCase();
+
+                for (let i = 1; i < rows.length; i++) { // Mulai dari 1 untuk menghindari header
+                    const cells = rows[i].getElementsByTagName('td');
+                    let found = false;
+
+                    for (let j = 0; j < cells.length; j++) {
+                        if (cells[j].innerText.toLowerCase().indexOf(filter) > -1) {
+                            found = true;
+                            break;
+                        }
+                    }
+
+                    if (found) {
+                        rows[i].style.display = '';
+                    } else {
+                        rows[i].style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

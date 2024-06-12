@@ -82,36 +82,7 @@ class AdminController extends Controller
     }
 }
 
-    // FITUR SEARCH ADMIN =================================================================================================================================
-    public function search_adminAkun(Request $request)
-    {
-        $search = $request->input('search');
-
-        $users = User::when($search, function ($query, $search) {
-            return $query->where('username', 'like', "%{$search}%")
-                        ->orWhere('email', 'like', "%{$search}%")
-                        ->orWhere('tipe_user', 'like', "%{$search}%");
-        })->get();
-
-        return view('akun_admin', compact('users'));
-    }
-
-    public function search_agendakota(Request $request)
-    {
-        $search = $request->input('search');
-
-        $agendaKotas = agenda_kota::when($search, function ($query, $search) {
-        return $query->where('Nama_Penyelenggara', 'like', "%{$search}%")
-                     ->orWhere('Nama_Event', 'like', "%{$search}%")
-                     ->orWhere('kategori', 'like', "%{$search}%")
-                     ->orWhere('Deskripsi_Event', 'like', "%{$search}%")
-                     ->orWhere('Tanggal_Pelaksanaan', 'like', "%{$search}%");
-        })->get();
-
-        return view('admin_agendaKota', compact('agendaKotas'));
-    }
-
-
+    
     public function admin_editAkun($id)
     {
         $user = User::find($id);
